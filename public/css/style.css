@@ -1,0 +1,15 @@
+:root {
+  /* Font Family */
+  --font-family: ;
+  /* Font Size */
+  /* Colours */
+  /* Box Shadow */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {}
