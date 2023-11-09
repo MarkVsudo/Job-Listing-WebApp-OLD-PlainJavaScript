@@ -1,0 +1,116 @@
+/* Login & Register */
+#logInSection {
+  position: relative;
+  background-color: var(--dark-blue);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5rem;
+}
+
+.login-title {
+  font-size: 4rem;
+  color: var(--light-blue);
+}
+
+.ellipse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  animation: shrinkAndEnlarge 1s ease-in-out;
+  z-index: 1;
+}
+
+.ellipse-mobile {
+  bottom: 0 !important;
+}
+
+@keyframes shrinkAndEnlarge {
+  0% {
+    transform: scale(10);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-input-section {
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.login-input-section label {
+  color: var(--light-blue);
+}
+
+.password-input-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forgot-password-btn {
+  color: var(--cyan);
+  transition: all 250ms ease-in-out;
+}
+
+.forgot-password-btn:hover {
+  color: var(--light-blue);
+}
+
+.form-text {
+  color: var(--light-blue) !important;
+}
+
+#logInBtn {
+  background-color: transparent;
+  border: 2px solid var(--light-blue);
+  color: var(--light-blue);
+  width: 100%;
+  padding-block: 1rem;
+  font-size: 1.25rem;
+  border-radius: 6px;
+  transition: all 250ms ease-in-out;
+  font-weight: 500;
+}
+
+#logInBtn:is(:hover, :active, :focus) {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
+
+.register-redirect-span {
+  color: var(--light-blue);
+}
+
+.register-redirect-span a {
+  color: var(--cyan);
+  transition: all 250ms ease-in-out;
+}
+
+.register-redirect-span a:hover {
+  color: var(--light-blue);
+}
+
+.form-check-input:checked {
+  background-color: transparent !important;
+  border-color: var(--light-blue) !important;
+}
+
+.policy-redirect {
+  color: var(--cyan);
+  transition: all 250ms ease-in-out;
+}
+
+.policy-redirect:hover {
+  color: var(--light-blue);
+}
+
+@media screen and (max-width: 767px) {}
