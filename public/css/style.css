@@ -47,6 +47,8 @@ a {
   position: absolute;
   top: 0;
   right: 0;
+  width: 50%;
+  height: 100vh;
 }
 
 .login-input-section {
@@ -114,4 +116,13 @@ a {
 .form-check-input:checked {
   background-color: transparent !important;
   border-color: var(--light-blue) !important;
+}
+
+.policy-redirect {
+  color: var(--cyan);
+  transition: all 250ms ease-in-out;
+}
+
+.policy-redirect:hover {
+  color: var(--light-blue);
 }
