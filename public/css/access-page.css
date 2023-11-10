@@ -113,4 +113,43 @@
   color: var(--light-blue);
 }
 
-@media screen and (max-width: 767px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  .login-input-section {
+    width: 35%;
+  }
+
+  .login-title {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #logInSection {
+    padding: 1rem;
+  }
+
+  .login-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .login-input-section {
+    width: 90%;
+  }
+
+  .ellipse {
+    top: unset;
+    bottom: 0;
+  }
+
+  .ellipse-mobile {
+    height: max-content;
+    width: auto;
+  }
+
+  .form-check-label {
+    font-size: .875em;
+  }
+}
