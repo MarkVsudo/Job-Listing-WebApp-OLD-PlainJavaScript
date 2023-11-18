@@ -21,10 +21,91 @@
 
 body {
   font-family: var(--font-family);
+  background-color: var(--light-blue) !important;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none !important;
 }
 
+/* Navigation bar */
+.dropdown-menu {
+  background-color: var(--blue-gray) !important;
+}
+
+.dropdown-item {
+  color: var(--light-blue) !important;
+  transition: all 250ms ease-in-out;
+}
+
+.dropdown-item:is(:hover, :active, :focus) {
+  background-color: var(--dark-blue) !important;
+}
+
+.nav-link {
+  color: var(--dark-blue) !important;
+}
+
+.nav-link:is(:hover, :active, :focus) {
+  color: var(--cyan) !important;
+}
+
+.nav-link.active {
+  color: var(--cyan) !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    flex-grow: unset !important;
+  }
+}
+
+/*  */
+
 /* Home Page */
+
+#home {
+  margin: 2rem 4rem;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home-title {
+  color: var(--dark-blue);
+  text-align: left;
+  font-size: 4.875rem;
+}
+
+.home-title span {
+  color: var(--cyan);
+}
+
+.home-ellipse-bg {
+  position: absolute;
+  bottom: 0rem;
+  left: -5rem;
+}
+
+.home-main-image {
+  position: absolute;
+  bottom: 6rem;
+  right: 5rem;
+}
+
+.stats-home {
+  color: var(--dark-blue);
+  line-height: .8 !important;
+}
+
+.btn-search {
+  background-color: var(--cyan) !important;
+  color: var(--light-blue) !important;
+}
+
+.btn-search:is(:hover) {
+  background-color: var(--blue-gray) !important;
+}
+
+/*  */
