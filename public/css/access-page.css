@@ -8,6 +8,13 @@
   padding: 5rem;
 }
 
+.home-redirect {
+  position: absolute;
+  z-index: 1;
+  left: 5rem;
+  top: 1rem
+}
+
 .login-title {
   font-size: 4rem;
   color: var(--light-blue);

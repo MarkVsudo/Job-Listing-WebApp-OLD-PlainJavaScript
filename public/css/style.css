@@ -109,3 +109,69 @@ a {
 }
 
 /*  */
+
+/* Categories */
+#categories {
+  width: 100%;
+  position: relative;
+}
+
+#categories h2 {
+  color: var(--blue-gray);
+  font-size: 2.5rem;
+}
+
+#categories h4 {
+  color: var(--blue-gray);
+  font-size: 1.5rem;
+}
+
+.categories-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.category {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.category:hover {
+  background-color: whitesmoke;
+}
+
+.category-title {
+  font-weight: bold;
+}
+
+.category-title span {
+  font-weight: 500;
+  opacity: .8;
+}
+
+.btn-categories {
+  background-color: var(--cyan) !important;
+  color: var(--light-blue) !important;
+}
+
+.btn-categories:is(:hover) {
+  background-color: var(--blue-gray) !important;
+}
+
+.ellipse-categories-bg {
+  position: absolute;
+  bottom: -3rem;
+  right: -5rem;
+  width: 25%;
+  z-index: -1;
+}
+
+/*  */

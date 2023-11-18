@@ -100,7 +100,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="#">
+                  <a class="dropdown-item d-flex gap-3" href="/login">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -121,7 +121,7 @@
                   >
                 </li>
                 <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="#">
+                  <a class="dropdown-item d-flex gap-3" href="/register">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -237,7 +237,7 @@
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control form-control-lg"
               id="exampleFormControlInput1"
               placeholder="City, state, zip code, or 'remote'"
             />
@@ -262,13 +262,15 @@
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control form-control-lg"
               id="exampleFormControlInput2"
               placeholder="Job title, keywords, or company"
             />
           </div>
         </div>
-        <button type="button" class="btn btn-search mb-5">Search</button>
+        <button type="button" class="btn btn-search mb-5 fw-medium">
+          Search
+        </button>
 
         <div class="d-flex gap-5">
           <span class="fw-bold display-6 stats-home"
@@ -284,6 +286,75 @@
         src="./assets/ellipse-background-home.svg"
         alt=""
         class="home-ellipse-bg"
+      />
+    </section>
+
+    <section id="categories" class="d-flex align-items-center flex-column">
+      <h2 class="text-center">Find the job which suits you the best</h2>
+      <h4 class="text-center">There are 50+ job categories available</h4>
+      <div class="container categories-block mt-5">
+        <div class="category">
+          <img src="./assets/it-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Information <br />Technology (IT)<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/house-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Real Estate <br />Business<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/book-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Education<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img
+            src="./assets/engineering-category-img.svg"
+            alt="category icon"
+          />
+          <span class="category-title">
+            Engineering<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/finance-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Finance & <br />Banking<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/restaurant-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Restaurant <br />Services<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/marketing-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Marketing & <br />Advertising<br /><span>525 jobs</span></span
+          >
+        </div>
+        <div class="category">
+          <img src="./assets/hr-category-img.svg" alt="category icon" />
+          <span class="category-title">
+            Human <br />
+            Resources (HR)<br /><span>525 jobs</span></span
+          >
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-categories m-5 fw-medium">
+        Explore all categories
+      </button>
+
+      <img
+        src="./assets/ellipse-background-categories.svg"
+        alt="categories ellipse background"
+        class="ellipse-categories-bg"
       />
     </section>
 
