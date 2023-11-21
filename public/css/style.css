@@ -175,3 +175,78 @@ a {
 }
 
 /*  */
+
+/* Process */
+#process {
+  width: 100%;
+  position: relative;
+  margin-block: 10rem;
+}
+
+.process-main {
+  background-color: var(--blue-gray);
+  border-radius: 12px;
+  gap: 5rem;
+  position: relative;
+  padding: 3rem;
+  width: 70%;
+}
+
+.process-sub {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 15rem;
+  height: max-content;
+  transform: translateX(-7rem);
+}
+
+.process-num {
+  color: white;
+  background-color: var(--cyan);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: grid;
+  font-size: 1.25rem;
+  font-weight: 700;
+  place-items: center;
+}
+
+.process-title {
+  color: black;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.process-sub {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.process-img {
+  position: absolute;
+  height: 120%;
+  bottom: 0;
+}
+
+.companies-line {
+  width: 100%;
+  background-color: #404B69;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.companies-line iconify-icon {
+  font-size: 2.25rem;
+  filter: grayscale(100%);
+  transition: all 250ms ease-in-out;
+}
+
+.companies-line iconify-icon:hover {
+  filter: grayscale(10%);
+}
+
+/*  */
