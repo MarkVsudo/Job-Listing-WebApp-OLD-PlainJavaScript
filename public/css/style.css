@@ -221,6 +221,7 @@ a {
 
 .process-sub {
   color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .process-img {
@@ -248,5 +249,41 @@ a {
 .companies-line iconify-icon:hover {
   filter: grayscale(10%);
 }
+
+/*  */
+
+/* Learn From Experts */
+#learnFromExperts {
+  width: 100%;
+  position: relative;
+  margin-block: 10rem;
+}
+
+#learnFromExperts h2 {
+  color: var(--blue-gray);
+  font-size: 2.5rem;
+}
+
+#learnFromExperts h4 {
+  color: var(--blue-gray);
+  font-size: 1.5rem;
+}
+
+.experts-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  place-items: center;
+}
+
+.tutorial-img {
+  grid-column: span 4;
+}
+
+.experts-tutorial {
+  grid-column: span 1;
+  background-color: var(--blue-gray);
+}
+
 
 /*  */
