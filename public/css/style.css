@@ -29,6 +29,23 @@ a {
   text-decoration: none !important;
 }
 
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 8px
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 5px
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue-gray);
+  border-radius: 5px
+}
+
+/*  */
+
 /* Navigation bar */
 .dropdown-menu {
   background-color: var(--blue-gray) !important;
@@ -274,16 +291,80 @@ a {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   place-items: center;
+  gap: 2rem;
+  margin-block: 3rem;
+}
+
+.experts-main-img {
+  grid-column: span 4;
+  width: 100%;
+}
+
+.tutorial-img,
+.continue-arrow {
+  background-color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border: 3px solid var(--blue-gray);
+  overflow: hidden;
+  position: relative;
 }
 
 .tutorial-img {
-  grid-column: span 4;
+  top: -25px;
+}
+
+.continue-arrow {
+  width: 55px;
+  height: 55px;
+  place-self: end;
+  right: -35px;
+  bottom: 10px;
+}
+
+.tutorial-img img {
+  position: absolute;
+  left: 10px;
+}
+
+.continue-arrow svg {
+  position: absolute;
+  color: black;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.continue-arrow:hover svg {
+  transform: translateX(5px);
 }
 
 .experts-tutorial {
   grid-column: span 1;
   background-color: var(--blue-gray);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-inline: 1rem;
+  border-radius: 12px;
+  position: relative;
 }
+
+.tutorial-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.tutorial-text {
+  text-align: justify;
+}
+
 
 
 /*  */
