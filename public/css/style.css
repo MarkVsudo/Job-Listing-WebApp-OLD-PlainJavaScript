@@ -440,3 +440,11 @@ a {
 }
 
 /*  */
+
+footer {
+  background-color: var(--dark-blue);
+}
+
+footer .footer-network {
+  background-color: var(--cyan);
+}
