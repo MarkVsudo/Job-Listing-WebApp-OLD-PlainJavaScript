@@ -113,7 +113,6 @@ a {
 
 .stats-home {
   color: var(--dark-blue);
-  line-height: .8 !important;
 }
 
 .btn-search {
@@ -162,7 +161,13 @@ a {
 }
 
 .category:hover {
-  background-color: whitesmoke;
+  background-color: var(--dark-blue);
+  color: white;
+  transform: translateY(-10px);
+}
+
+.category:hover img {
+  filter: invert(100%);
 }
 
 .category-title {
@@ -216,6 +221,8 @@ a {
   width: 15rem;
   height: max-content;
   transform: translateX(-7rem);
+  color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .process-num {
@@ -234,11 +241,6 @@ a {
   color: black;
   font-weight: 700;
   font-size: 1.25rem;
-}
-
-.process-sub {
-  color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .process-img {

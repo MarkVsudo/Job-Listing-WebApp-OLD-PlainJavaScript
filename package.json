@@ -1,7 +1,7 @@
 {
   "name": "job-listing-webapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "JobConqueror is a comprehensive full-stack application designed to simplify and streamline the job search process. Our platform serves as a centralized hub for job seekers and employers, providing a user-friendly experience from job listing creation to application submission.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "gsap": "^3.12.2",
     "mysql2": "^3.6.2",
     "nodemon": "^3.0.1"
   }
