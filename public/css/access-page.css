@@ -76,7 +76,8 @@
   color: var(--light-blue) !important;
 }
 
-#logInBtn {
+#logInBtn,
+#createAccountBtn {
   background-color: transparent;
   border: 2px solid var(--light-blue);
   color: var(--light-blue);
@@ -88,7 +89,8 @@
   font-weight: 500;
 }
 
-#logInBtn:is(:hover, :active, :focus) {
+#logInBtn:is(:hover, :active, :focus),
+#createAccountBtn:is(:hover, :active, :focus) {
   background-color: var(--light-blue);
   color: var(--dark-blue);
 }

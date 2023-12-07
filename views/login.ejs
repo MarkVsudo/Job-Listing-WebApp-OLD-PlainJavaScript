@@ -4,35 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="icon" type="image/x-icon" href="./assets/app-icon.svg" />
+    <link rel="icon" type="image/x-icon" href="/assets/app-icon.svg" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/access-page.css" />
   </head>
   <body>
     <a href="/" class="home-redirect"
-      ><img src="./assets/website_logo_bright.svg" alt="home logo"
+      ><img src="/assets/website_logo_bright.svg" alt="home logo"
     /></a>
     <section id="logInSection">
       <h1 class="login-title">Sign in to your account</h1>
       <img
-        src="./assets/ellipse-svg-desktop.svg"
+        src="/assets/ellipse-svg-desktop.svg"
         alt=""
         class="ellipse ellipse-desktop d-none d-lg-block"
       />
 
       <img
-        src="./assets/ellipse-svg-tablet.svg"
+        src="/assets/ellipse-svg-tablet.svg"
         alt=""
         class="ellipse ellipse-tablet d-none d-md-block d-lg-none"
       />
 
       <img
-        src="./assets/ellipse-svg-mobile.svg"
+        src="/assets/ellipse-svg-mobile.svg"
         alt=""
         class="ellipse ellipse-mobile d-block d-md-none"
       />
       <div class="login-input-section">
-        <form action="post">
+        <form action="/login" method="post">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
               >Email</label
@@ -41,6 +41,7 @@
               type="email"
               class="form-control"
               id="exampleFormControlInput1"
+              name="email"
               placeholder="name@example.com"
             />
           </div>
@@ -52,6 +53,7 @@
             type="password"
             id="inputPassword5"
             class="form-control"
+            name="password"
             aria-describedby="passwordHelpBlock"
           />
           <div id="passwordHelpBlock" class="form-text">
@@ -64,18 +66,19 @@
               type="checkbox"
               class="form-check-input"
               id="exampleCheck1"
+              name="remember"
             />
             <label class="form-check-label" for="exampleCheck1"
               >Stay signed in (30 days)</label
             >
           </div>
+
+          <button type="submit" id="logInBtn">Continue</button>
         </form>
 
-        <button id="logInBtn">Continue</button>
-
         <span class="register-redirect-span"
-          >Don't have an account?<a href="/register"> Sign up</a>
-        </span>
+          >Don't have an account?<a href="/register"> Sign up</a></span
+        >
       </div>
     </section>
 

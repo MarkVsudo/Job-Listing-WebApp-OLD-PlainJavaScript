@@ -44,13 +44,13 @@ gsap.from(
   }
 );
 
-gsap.from("#mission h2", {
+gsap.from(["#mission h2", ".mission-block"], {
   y: -50,
   opacity: 0,
   duration: 1,
   scrollTrigger: {
     trigger: "#mission",
-    start: "top center",
+    start: "top-=200px center",
   },
 });
 
@@ -71,6 +71,16 @@ gsap.from("#mission .mission-img", {
   scrollTrigger: {
     trigger: "#mission",
     start: "top center",
+  },
+});
+
+gsap.from(".vocation-block", {
+  y: -50,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#vocation",
+    start: "top-=200px center",
   },
 });
 

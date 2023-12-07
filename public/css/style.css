@@ -26,6 +26,7 @@ body {
 }
 
 a {
+  color: white !important;
   text-decoration: none !important;
 }
 
@@ -449,4 +450,20 @@ footer {
 
 footer .footer-network {
   background-color: var(--cyan);
+}
+
+.footer-hover-icon {
+  transition: all 250ms ease-in-out;
+}
+
+.footer-hover-icon:hover {
+  color: var(--blue-gray) !important;
+}
+
+.footer-hover {
+  transition: all 250ms ease-in-out;
+}
+
+.footer-hover:hover {
+  color: var(--cyan) !important;
 }
