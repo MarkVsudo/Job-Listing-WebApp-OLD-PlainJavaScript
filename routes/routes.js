@@ -1,9 +1,17 @@
 const express = require("express");
 // const connection = require("./config/db-config");
+const { authenticateToken } = require("../middleware/authMiddleware");
+const authController = require("../controllers/authController");
 const router = express.Router();
+
+router.use("/", authController);
 
 router.get("/", (req, res) => {
   res.render("index", { title: "JobConqueror - Homepage" });
+});
+
+router.get("/blog", authenticateToken, (req, res) => {
+  res.render("blog", { user: req.user });
 });
 
 router.get("/login", (req, res) => {

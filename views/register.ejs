@@ -44,8 +44,10 @@
               id="exampleFormControlInput1"
               name="email"
               placeholder="name@example.com"
+              required
             />
           </div>
+
           <div class="mb-3">
             <label for="exampleFormControlInput2" class="form-label"
               >First & Family Name</label
@@ -56,8 +58,10 @@
               id="exampleFormControlInput2"
               name="fullName"
               placeholder="Ivan Petrov"
+              required
             />
           </div>
+
           <div class="password-input-heading">
             <label for="inputPassword5" class="form-label">Password</label>
           </div>
@@ -67,6 +71,7 @@
             class="form-control"
             name="password"
             aria-describedby="passwordHelpBlock"
+            required
           />
           <div id="passwordHelpBlock" class="form-text">
             Your password must be 8-20 characters long, contain letters and
@@ -99,13 +104,13 @@
               <a href="" class="policy-redirect">Privacy Policy</a>
             </label>
           </div>
+
+          <button type="submit" id="createAccountBtn">Create account</button>
         </form>
 
-        <button type="submit" id="createAccountBtn">Create account</button>
-
-        <span class="register-redirect-span"
-          >Already have an account?<a href="/login"> Sign in</a></span
-        >
+        <span class="register-redirect-span">
+          Already have an account?<a href="/login"> Sign in</a>
+        </span>
       </div>
     </section>
 
