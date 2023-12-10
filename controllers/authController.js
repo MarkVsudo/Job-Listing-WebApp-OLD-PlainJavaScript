@@ -62,4 +62,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.get("/logout", (req, res) => {
+  // Clear the authentication token by removing the cookie
+  res.clearCookie("token");
+  // Redirect to the home page or any other desired page
+  res.redirect("/");
+});
+
 module.exports = router;

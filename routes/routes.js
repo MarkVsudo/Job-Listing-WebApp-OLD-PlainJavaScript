@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.use("/", authController);
 
-router.get("/", (req, res) => {
-  res.render("index", { title: "JobConqueror - Homepage" });
+router.get("/", authenticateToken, (req, res) => {
+  res.render("index", { title: "JobConqueror - Homepage", user: req.user });
 });
 
 router.get("/blog", authenticateToken, (req, res) => {
