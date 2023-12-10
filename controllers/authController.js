@@ -1,6 +1,6 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
-const { comparePasswords } = require("../utils/bcryptUtils");
+const { comparePasswords, hashPassword } = require("../utils/bcryptUtils");
+const { createAuthToken } = require("../utils/authUtils");
 const User = require("../models/user");
 require("dotenv").config();
 const router = express.Router();
@@ -15,12 +15,14 @@ router.post("/login", async (req, res) => {
       return res.status(401).send("Invalid email or password");
     }
 
-    const token = jwt.sign(
-      { email: user.email, role: user.role },
-      "process.env.JWT_SECRET"
-    );
+    // Create authentication token
+    const token = createAuthToken(user);
+
+    // Set the token as a cookie
     res.cookie("token", token);
-    res.redirect("/blog"); // Change this to your actual dashboard route
+
+    // Redirect to the blog page after successful login
+    res.redirect("/blog");
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const dbConnection = require("./config/db-config");
 const PORT = process.env.PORT || 5000;
 
@@ -14,6 +15,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Routes
 app.use("/", require("./routes/routes"));
