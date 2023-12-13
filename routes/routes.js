@@ -50,4 +50,15 @@ router.get("/profile", (req, res) => {
   res.render("profile", { title: "JobConqueror - Profile" });
 });
 
+// Route handler for 404 errors
+router.get("/not-found", (req, res) => {
+  res.render("/not-found", { title: "JobConqueror - 404 Not Found" });
+});
+
+router.get("*", (req, res) => {
+  res
+    .status(404)
+    .render("not-found", { title: "JobConqueror - 404 Not Found" });
+});
+
 module.exports = router;

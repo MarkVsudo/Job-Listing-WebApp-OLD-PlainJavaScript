@@ -11,6 +11,7 @@
   --cyan: #00818A;
   --light-blue: #DBEDF3;
   /* Box Shadow */
+  --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -156,7 +157,7 @@ a {
   justify-content: space-between;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
   cursor: pointer;
   transition: all 250ms ease-in-out;
 }
@@ -223,7 +224,7 @@ a {
   height: max-content;
   transform: translateX(-7rem);
   color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
 }
 
 .process-num {
@@ -347,7 +348,7 @@ a {
 .experts-tutorial {
   grid-column: span 1;
   background-color: var(--blue-gray);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
   color: white;
   text-align: center;
   display: flex;
@@ -381,7 +382,7 @@ a {
 .mission-block {
   background-color: var(--blue-gray);
   border-radius: 12px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
   margin-block: 3rem;
 }
 
