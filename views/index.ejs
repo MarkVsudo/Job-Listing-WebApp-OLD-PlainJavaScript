@@ -96,115 +96,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Job Seekers
-              </a>
-              <ul class="dropdown-menu">
-                <% if (user) { %>
-                <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      fill="currentColor"
-                      class="bi bi-columns-gap"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"
-                      />
-                    </svg>
-                    Dashboard</a
-                  >
-                </li>
-                <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="/logout">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      fill="currentColor"
-                      class="bi bi-box-arrow-left"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
-                      />
-                    </svg>
-                    Sign out</a
-                  >
-                </li>
-                <% } else { %>
-                <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="/login">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      fill="currentColor"
-                      class="bi bi-box-arrow-in-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-                      /></svg
-                    >Log in</a
-                  >
-                </li>
-                <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="/register">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      fill="currentColor"
-                      class="bi bi-plus-circle"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                      />
-                      <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                      />
-                    </svg>
-                    Create account</a
-                  >
-                </li>
-                <% } %>
-              </ul>
-            </li>
-            <li class="nav-item dropdown d-flex align-items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                class="bi bi-shop"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"
-                />
-              </svg>
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Recruiters
+                Profile
               </a>
               <ul class="dropdown-menu">
                 <% if (user) { %>
@@ -667,39 +559,55 @@
           <span class="fs-1 fw-bold"
             >Haven’t discovered your vocation yet?</span
           >
-          <div>
-            <p>
-              Send us a resume with which we can decide which job suits your
-              persona. Your resume is a key tool in helping us understand your
-              professional background, skills, and experience. Additionally,
-              feel free to include a cover letter highlighting your career goals
-              and any specific achievements that showcase your qualifications
-              for the desired position. We look forward to getting to know you
-              better and finding the perfect match for your career aspirations.
-            </p>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-floating">
+          <form
+            action="/form/process"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div>
+              <p>
+                Send us a resume with which we can decide which job suits your
+                persona. Your resume is a key tool in helping us understand your
+                professional background, skills, and experience. Additionally,
+                feel free to include a cover letter highlighting your career
+                goals and any specific achievements that showcase your
+                qualifications for the desired position. We look forward to
+                getting to know you better and finding the perfect match for
+                your career aspirations.
+              </p>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="floatingInput"
+                      name="email"
+                      placeholder="name@example.com"
+                      required
+                    />
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
                   <input
-                    type="email"
+                    type="file"
+                    name="resume"
                     class="form-control"
-                    id="floatingInput"
-                    placeholder="name@example.com"
+                    accept=".doc, .docx, .pdf"
+                    required
                   />
-                  <label for="floatingInput">Email address</label>
+                  <button
+                    type="submit"
+                    class="btn btn-upload btn-block fw-medium"
+                  >
+                    Upload File
+                  </button>
+                  <p>.doc(x)/.pdf</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <button
-                  type="button"
-                  class="btn btn-upload btn-block fw-medium"
-                >
-                  Upload File
-                </button>
-                <p>.doc(x)/.pdf</p>
-              </div>
             </div>
-          </div>
+          </form>
         </div>
         <img src="./assets/vocation-img.png" alt="Vocation Image" />
       </div>

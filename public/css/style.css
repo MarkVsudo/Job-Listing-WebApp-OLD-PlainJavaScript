@@ -436,6 +436,7 @@ a {
 .btn-upload {
   background-color: var(--cyan) !important;
   color: var(--light-blue) !important;
+  margin-top: .25rem;
 }
 
 .btn-upload:is(:hover) {
