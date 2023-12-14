@@ -2,8 +2,10 @@ const express = require("express");
 const { comparePasswords, hashPassword } = require("../utils/bcryptUtils");
 const { createAuthToken } = require("../utils/authUtils");
 const User = require("../models/user");
-require("dotenv").config();
 const router = express.Router();
+const flash = require("express-flash");
+
+router.use(flash());
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -12,7 +14,9 @@ router.post("/login", async (req, res) => {
     const user = await User.findByEmail(email);
 
     if (!user || !(await comparePasswords(password, user.password))) {
-      return res.status(401).send("Invalid email or password");
+      // Use flash for error message
+      req.flash("error", "Invalid email or password");
+      return res.redirect("/login");
     }
 
     // Create authentication token
@@ -21,8 +25,10 @@ router.post("/login", async (req, res) => {
     // Set the token as a cookie
     res.cookie("token", token);
 
-    // Redirect to the blog page after successful login
-    res.redirect("/blog");
+    // Flash success message
+    req.flash("success", "You successfully logged in.");
+
+    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -36,7 +42,9 @@ router.post("/register", async (req, res) => {
     // Check if the email is already registered
     const existingUser = await User.findByEmail(email);
     if (existingUser) {
-      return res.status(400).send("Email is already registered");
+      // Use flash for error message
+      req.flash("error", "Email is already registered");
+      return res.redirect("/register");
     }
 
     // Hash the password before storing it in the database
@@ -54,6 +62,8 @@ router.post("/register", async (req, res) => {
     // Save the new user to the database
     await User.createUser(newUser);
 
+    // Use flash for success message
+    req.flash("success", "Registration successful! Please log in.");
     // Redirect to the login page after successful registration
     res.redirect("/login");
   } catch (error) {

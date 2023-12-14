@@ -33,6 +33,19 @@
         style="width: 100vw; height: 7.5rem"
       />
       <div class="login-input-section">
+        <div
+          class="alert alert-danger<%= messages.error ? '' : ' d-none' %>"
+          role="alert"
+        >
+          <%= messages.error %>
+        </div>
+
+        <div
+          class="alert alert-success<%= messages.success ? '' : ' d-none' %>"
+          role="alert"
+        >
+          <%= messages.success %>
+        </div>
         <form action="/register" method="post">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
