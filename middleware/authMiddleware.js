@@ -5,12 +5,14 @@ function authenticateToken(req, res, next) {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.redirect("/login");
+    // No token found, but continue to the next middleware or route
+    return next();
   }
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
-      return res.redirect("/login");
+      // Invalid token, but continue to the next middleware or route
+      return next();
     }
 
     req.user = user;
