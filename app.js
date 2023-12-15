@@ -32,7 +32,6 @@ app.use(
 // Routes
 app.use("/", require("./routes/routes"));
 app.use("/form", formRoutes);
-app.use("/forgot-password", formRoutes);
 
 // Start your Express server
 app.listen(PORT, () => {
