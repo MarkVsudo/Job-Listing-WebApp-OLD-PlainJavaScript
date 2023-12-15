@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const formController = require("../controllers/vocationEmailController");
+const forgotPasswordController = require("../controllers/forgotPasswordController");
 const multer = require("multer");
 const { authenticateToken } = require("../middleware/authMiddleware");
 
@@ -17,4 +18,15 @@ router.post(
   formController.processForm
 );
 
+// Define forgot password-related routes
+router.get(
+  "/forgot-password",
+  authenticateToken,
+  forgotPasswordController.renderForgotPasswordForm
+);
+router.post(
+  "/forgot-password",
+  authenticateToken,
+  forgotPasswordController.processForgotPasswordForm
+);
 module.exports = router;
