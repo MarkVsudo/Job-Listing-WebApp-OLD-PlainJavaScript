@@ -26,6 +26,36 @@ class User {
       });
     });
   }
+
+  static updateResetToken(email, resetToken) {
+    return new Promise((resolve, reject) => {
+      dbConnection.query(
+        "UPDATE users SET reset_token = ? WHERE email = ?",
+        [resetToken, email],
+        (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+          resolve(results);
+        }
+      );
+    });
+  }
+
+  static updatePasswordAndResetToken(email, password, resetToken) {
+    return new Promise((resolve, reject) => {
+      dbConnection.query(
+        "UPDATE users SET password = ?, reset_token = ? WHERE email = ?",
+        [password, resetToken, email],
+        (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+          resolve(results);
+        }
+      );
+    });
+  }
 }
 
 module.exports = User;

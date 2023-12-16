@@ -77,7 +77,8 @@
 }
 
 #logInBtn,
-#createAccountBtn {
+#createAccountBtn,
+#resetPassBtn {
   background-color: transparent;
   border: 2px solid var(--light-blue);
   color: var(--light-blue);
@@ -90,7 +91,8 @@
 }
 
 #logInBtn:is(:hover, :active, :focus),
-#createAccountBtn:is(:hover, :active, :focus) {
+#createAccountBtn:is(:hover, :active, :focus),
+#resetPassBtn:is(:hover, :active, :focus) {
   background-color: var(--light-blue);
   color: var(--dark-blue);
 }
