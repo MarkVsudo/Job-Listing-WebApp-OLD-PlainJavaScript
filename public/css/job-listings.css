@@ -1,0 +1,82 @@
+.jobs-heading {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  padding: 3rem;
+  background-color: var(--blue-gray);
+  color: white;
+  overflow: hidden;
+}
+
+[class^="rectangle-jobs-header-"] {
+  width: 50px;
+  height: 300px;
+  position: absolute;
+}
+
+.rectangle-jobs-header-1 {
+  background-color: var(--dark-blue);
+  top: 1rem;
+  right: 5rem;
+  transform: rotate(70deg);
+}
+
+.rectangle-jobs-header-2 {
+  background-color: var(--light-blue);
+  top: -7rem;
+  right: -8rem;
+  transform: rotate(80deg);
+}
+
+.rectangle-jobs-header-3 {
+  background-color: var(--cyan);
+  top: -12rem;
+  right: 7rem;
+  transform: rotate(30deg);
+}
+
+.rectangle-jobs-header-4 {
+  background-color: var(--dark-blue);
+  top: -3rem;
+  right: 17rem;
+  transform: rotate(-40deg);
+}
+
+.rectangle-jobs-header-5 {
+  background-color: var(--light-blue);
+  top: 5rem;
+  right: 28rem;
+  transform: rotate(30deg);
+}
+
+.rectangle-jobs-header-6 {
+  background-color: var(--cyan);
+  top: -10rem;
+  right: 33rem;
+  transform: rotate(70deg);
+}
+
+.job-filters-block {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  height: max-content;
+  padding: 1rem 5rem;
+}
+
+.input-group-text {
+  background: transparent !important;
+}
+
+#jobSearchInput {
+  border-left: none !important;
+}
+
+.apply-job-filter {
+  background-color: var(--cyan) !important;
+  color: var(--light-blue) !important;
+}
+
+.apply-job-filter:is(:hover) {
+  background-color: var(--blue-gray) !important;
+}

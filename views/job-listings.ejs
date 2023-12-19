@@ -6,8 +6,431 @@
     <title><%= title %></title>
     <link rel="icon" type="image/x-icon" href="./assets/app-icon.svg" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/job-listings.css" />
   </head>
   <body>
-    Hello
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid mx-lg-5">
+        <a class="navbar-brand" href="/">
+          <img
+            src="./assets/website_logo.svg"
+            alt="Navigation Logo"
+            width="210"
+            height="45"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-uppercase fw-bold"
+                aria-current="page"
+                href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-uppercase fw-bold"
+                aria-current="page"
+                href="/job-listings"
+                >Offers</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-uppercase fw-bold"
+                aria-current="page"
+                href="#"
+                >Companies</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-uppercase fw-bold"
+                aria-current="page"
+                href="#"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-uppercase fw-bold"
+                aria-current="page"
+                href="#"
+                >Recommendations</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item dropdown d-flex align-items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-person"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                />
+              </svg>
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profile
+              </a>
+              <ul class="dropdown-menu">
+                <% if (user) { %>
+                <li class="d-flex">
+                  <a class="dropdown-item d-flex gap-3" href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-columns-gap"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"
+                      />
+                    </svg>
+                    Dashboard</a
+                  >
+                </li>
+                <li class="d-flex">
+                  <a class="dropdown-item d-flex gap-3" href="/logout">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-box-arrow-left"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
+                      />
+                    </svg>
+                    Sign out</a
+                  >
+                </li>
+                <% } else { %>
+                <li class="d-flex">
+                  <a class="dropdown-item d-flex gap-3" href="/login">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-box-arrow-in-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                      /></svg
+                    >Log in</a
+                  >
+                </li>
+                <li class="d-flex">
+                  <a class="dropdown-item d-flex gap-3" href="/register">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-plus-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                    Create account</a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--  -->
+    <div class="jobs-heading">
+      <div class="d-flex flex-column gap-2 align-content-center">
+        <span class="h4">Find your dream job</span>
+        <span class="h6 fw-light"
+          >Looking for jobs? Browse our latest job openings</span
+        >
+      </div>
+      <div class="rectangle-jobs-header-1"></div>
+      <div class="rectangle-jobs-header-2"></div>
+      <div class="rectangle-jobs-header-3"></div>
+      <div class="rectangle-jobs-header-4"></div>
+      <div class="rectangle-jobs-header-5"></div>
+      <div class="rectangle-jobs-header-6"></div>
+    </div>
+
+    <div class="job-filters-block d-flex">
+      <div class="search-block col-3 me-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="jobSearchInput"
+            list="datalistOptions"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            placeholder="Search jobs..."
+          />
+        </div>
+        <datalist id="datalistOptions">
+          <option value="Web Developer"></option>
+          <option value="Financial Analyst"></option>
+          <option value="UX/UI Designer"></option>
+          <option value="Customer Support Specialist"></option>
+          <option value="Marketing Coordinator"></option>
+        </datalist>
+      </div>
+      <div class="filters-block d-flex gap-3 col-9">
+        <select class="form-select" aria-label="Location Filter">
+          <option selected>Location:</option>
+          <option value="1">Sofia</option>
+          <option value="2">Plovdiv</option>
+          <option value="3">Burgas</option>
+          <option value="4">Varna</option>
+          <option value="5">Pleven</option>
+          <option value="6">Stara Zagora</option>
+        </select>
+        <select class="form-select" aria-label="Job Type Filter">
+          <option selected>Job Type:</option>
+          <option value="1">Intern</option>
+          <option value="2">Part-time</option>
+          <option value="3">Full-time</option>
+          <option value="4">Freelance</option>
+        </select>
+        <select class="form-select" aria-label="Industry Filter">
+          <option selected>Industry:</option>
+          <option value="1">IT</option>
+          <option value="2">Marketing</option>
+          <option value="3">Engineering</option>
+          <option value="4">Services</option>
+        </select>
+        <select class="form-select" aria-label="Experience Filter">
+          <option selected>Experience:</option>
+          <option value="1">0 - 1 years</option>
+          <option value="2">1 - 2 years</option>
+          <option value="3">2 - 4 years</option>
+          <option value="4">4+ years</option>
+        </select>
+        <button
+          type="button"
+          class="btn btn-outline-secondary d-flex justify-content-between col-2"
+        >
+          More Filters <i class="bi bi-sliders"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary apply-job-filter fw-medium col-2"
+        >
+          Apply Filters
+        </button>
+      </div>
+    </div>
+
+    <footer class="text-center text-lg-start text-white">
+      <section class="d-flex justify-content-between p-4 footer-network">
+        <div class="me-5">
+          <span>Get in touch with us on social networks:</span>
+        </div>
+
+        <div>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-google"></i>
+          </a>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4 footer-hover-icon">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </section>
+
+      <section id="footer">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">JobConqueror</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                JobConqueror is a job search platform designed to simplify and
+                streamline the job search process. Our platform serves as a
+                centralized hub for job seekers and employers, providing a
+                user-friendly experience from job listing creation to
+                application submission.
+              </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">Products</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 1</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 2</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 3</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 4</a>
+              </p>
+            </div>
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 5</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 6</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 7</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white footer-hover">Redirect 8</a>
+              </p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold">Contact</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <p>
+                <i class="bi bi-geo-alt"></i>
+                <a
+                  href="https://www.google.com/maps/place/1463+Ndk,+Sofia/@42.685556,23.3140979,17z/data=!3m1!4b1!4m10!1m2!2m1!1sndk!3m6!1s0x40aa850e376ccf4d:0xe7c973921f32a327!8m2!3d42.6844154!4d23.3191664!15sCgNuZGuSAQxuZWlnaGJvcmhvb2TgAQA!16s%2Fg%2F11g9qgnmg3?entry=ttu"
+                  target="_blank"
+                  class="footer-hover"
+                  >Bulgaria Blvd, 1463 Ndk, Sofia</a
+                >
+              </p>
+              <p>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:info@example.com" class="footer-hover"
+                  >veskovmark99@gmail.com</a
+                >
+              </p>
+              <p>
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+0123456788" class="footer-hover"
+                  >+01 234 567 88</a
+                >
+              </p>
+              <p>
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+0123456789" class="footer-hover"
+                  >+01 234 567 89</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="#">jobconqueror.com</a>
+      </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+    <!--  -->
+    <script type="module" src="./js/animations.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
 </html>

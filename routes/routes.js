@@ -39,7 +39,10 @@ router.get("/customer-support", (req, res) => {
 });
 
 router.get("/job-listings", (req, res) => {
-  res.render("job-listings", { title: "JobConqueror - Job Board" });
+  res.render("job-listings", {
+    title: "JobConqueror - Job Board",
+    user: req.user,
+  });
 });
 
 router.get("/privacy-policy", (req, res) => {
