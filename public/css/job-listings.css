@@ -127,3 +127,22 @@
   background-color: var(--dark-blue) !important;
   color: white;
 }
+
+.btn-apply {
+  background-color: var(--cyan) !important;
+  color: var(--light-blue) !important;
+}
+
+.btn-apply:is(:hover) {
+  background-color: var(--blue-gray) !important;
+}
+
+.btn-save-job {
+  background-color: transparent !important;
+  border: 1px solid black !important;
+  border-radius: 1rem;
+}
+
+.line-main-header {
+  margin: 0;
+}
