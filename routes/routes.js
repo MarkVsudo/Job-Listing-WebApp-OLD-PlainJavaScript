@@ -38,9 +38,16 @@ router.get("/customer-support", (req, res) => {
   res.render("customer-support", { title: "JobConqueror - FAQ" });
 });
 
-router.get("/job-listings", (req, res) => {
+router.get("/job-listings", authenticateToken, (req, res) => {
   res.render("job-listings", {
     title: "JobConqueror - Job Board",
+    user: req.user,
+  });
+});
+
+router.get("/verify-employer", authenticateToken, (req, res) => {
+  res.render("verify-employer", {
+    title: "JobConqueror - Verify Employer",
     user: req.user,
   });
 });
