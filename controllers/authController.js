@@ -4,6 +4,7 @@ const { createAuthToken } = require("../utils/authUtils");
 const nodemailerConfig = require("../config/nodemailer-config");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const Employer = require("../models/employer");
 const crypto = require("crypto");
 require("dotenv").config();
 const router = express.Router();
@@ -64,10 +65,28 @@ router.post("/register", async (req, res) => {
     };
 
     // Save the new user to the database
-    await User.createUser(newUser);
+    const userResults = await User.createUser(newUser);
+
+    // Extract the user ID from the results
+    const userId = userResults.insertId;
+
+    // If the user is a recruiter, insert a record into the employers table
+    if (newUser.role === "recruiter") {
+      const employerData = {
+        user_id: userId, // Use the insertId property to get the user ID
+        verified: 0, // Default value
+        company_id: null, // Default value
+      };
+
+      // Insert into the employers table
+      await Employer.createEmployer(employerData); // Replace with your actual method for inserting into the employers table
+
+      console.log("Employer record created successfully!");
+    }
 
     // Use flash for success message
     req.flash("success", "Registration successful! Please log in.");
+
     // Redirect to the login page after successful registration
     res.redirect("/login");
   } catch (error) {
