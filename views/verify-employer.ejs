@@ -35,7 +35,10 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div
+          class="collapse navbar-collapse desktop-nav-links"
+          id="navbarNavDropdown"
+        >
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
@@ -200,7 +203,7 @@
 
       <!-- Company Information Form -->
       <form
-        action="/verify-employer-form"
+        action="/verify-employer"
         method="post"
         enctype="multipart/form-data"
       >
@@ -251,17 +254,12 @@
 
         <div class="form-group">
           <label for="logo">Logo Image:</label>
-          <input type="file" class="form-control-file" id="logo" name="logo" />
+          <input type="text" class="form-control" id="logo" name="logo" />
         </div>
 
         <div class="form-group">
           <label for="banner">Banner Image:</label>
-          <input
-            type="file"
-            class="form-control-file"
-            id="banner"
-            name="banner"
-          />
+          <input type="text" class="form-control" id="banner" name="banner" />
         </div>
 
         <div class="form-group">

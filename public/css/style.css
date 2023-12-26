@@ -81,6 +81,12 @@ a {
   }
 }
 
+.desktop-nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*  */
 
 /* Home Page */

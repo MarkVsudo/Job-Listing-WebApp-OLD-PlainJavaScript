@@ -1,5 +1,5 @@
 const express = require("express");
-// const connection = require("./config/db-config");
+const connection = require("../config/db-config");
 const { authenticateToken } = require("../middleware/authMiddleware");
 const authController = require("../controllers/authController");
 const router = express.Router();
@@ -45,12 +45,55 @@ router.get("/job-listings", authenticateToken, (req, res) => {
   });
 });
 
+router.get("/dashboard", authenticateToken, (req, res) => {
+  res.render("dashboard", {
+    title: "JobConqueror - Dashboard",
+    user: req.user,
+  });
+});
+
 router.get("/verify-employer", authenticateToken, (req, res) => {
   res.render("verify-employer", {
     title: "JobConqueror - Verify Employer",
     user: req.user,
   });
 });
+
+// router.post("/verify-employer", authenticateToken, (req, res) => {
+//   const formData = req.body;
+
+//   // Insert the form data into the 'companies' table
+//   const query = `
+//     INSERT INTO companies
+//     (name, industry, size, headquarters, website, logo, banner, description, founded_year, contact_email, contact_phone)
+//     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+//   `;
+
+//   const values = [
+//     formData.name,
+//     formData.industry,
+//     formData.size,
+//     formData.headquarters,
+//     formData.website,
+//     formData.logo,
+//     formData.banner,
+//     formData.description,
+//     formData.founded_year,
+//     formData.contact_email,
+//     formData.contact_phone,
+//   ];
+
+//   // Use the connection to execute the query
+//   connection.query(query, values, (err, results) => {
+//     if (err) {
+//       console.error("Error inserting data into MySQL:", err);
+//       res.status(500).send("Internal Server Error");
+//     } else {
+//       console.log("Data inserted into MySQL:", results);
+//       res.status(200).send("Form submitted successfully");
+//     }
+//   });
+// });
 
 router.get("/privacy-policy", (req, res) => {
   res.render("privacy-policy", { title: "JobConqueror - Privacy Policy" });
