@@ -56,6 +56,24 @@ class User {
       );
     });
   }
+
+  static isRecruiterVerified(userId) {
+    return new Promise((resolve, reject) => {
+      dbConnection.query(
+        "SELECT verified FROM employers WHERE user_id = ?",
+        [userId],
+        (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+
+          // Check if there is a corresponding record in the employers table
+          const isVerified = results.length > 0 && results[0].verified === 1;
+          resolve(isVerified);
+        }
+      );
+    });
+  }
 }
 
 module.exports = User;

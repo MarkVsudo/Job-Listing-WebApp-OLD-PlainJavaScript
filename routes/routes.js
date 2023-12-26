@@ -2,6 +2,7 @@ const express = require("express");
 const connection = require("../config/db-config");
 const { authenticateToken } = require("../middleware/authMiddleware");
 const authController = require("../controllers/authController");
+const User = require("../models/user");
 const router = express.Router();
 
 router.use("/", authController);
@@ -45,18 +46,57 @@ router.get("/job-listings", authenticateToken, (req, res) => {
   });
 });
 
-router.get("/dashboard", authenticateToken, (req, res) => {
-  res.render("dashboard", {
-    title: "JobConqueror - Dashboard",
-    user: req.user,
-  });
+router.get("/dashboard", authenticateToken, async (req, res) => {
+  try {
+    const userEmail = req.user.email;
+
+    // Find the user by email to get the user ID
+    const user = await User.findByEmail(userEmail);
+
+    if (!user) {
+      // Handle case where user is not found (you might redirect or show an error message)
+      console.error("User not found");
+      res.status(404).send("User not found");
+      return;
+    }
+
+    const userId = user.user_id;
+
+    // Check if the user is a recruiter
+    if (req.user.role === "recruiter") {
+      // Check if the recruiter is verified
+      const isVerified = await User.isRecruiterVerified(userId);
+
+      console.log("isVerified:", isVerified);
+      console.log("userId:", userId);
+
+      if (!isVerified) {
+        res.redirect("/verify-employer");
+        return; // Add a return statement to prevent further execution
+      }
+    }
+
+    // If the user is not a recruiter or is a verified recruiter, render the dashboard
+    res.render("dashboard", {
+      title: "JobConqueror - Dashboard",
+      user: req.user,
+    });
+  } catch (error) {
+    // Handle error appropriately (e.g., log it, send an error response)
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 router.get("/verify-employer", authenticateToken, (req, res) => {
-  res.render("verify-employer", {
-    title: "JobConqueror - Verify Employer",
-    user: req.user,
-  });
+  if (req.user.role !== "recruiter") {
+    res.redirect("/dashboard");
+  } else {
+    res.render("verify-employer", {
+      title: "JobConqueror - Verify Employer",
+      user: req.user,
+    });
+  }
 });
 
 // router.post("/verify-employer", authenticateToken, (req, res) => {
