@@ -1,4 +1,5 @@
 const dbConnection = require("../config/db-config");
+const Company = require("./company");
 
 class User {
   static findByEmail(email) {
@@ -73,6 +74,37 @@ class User {
         }
       );
     });
+  }
+
+  static async updateRecruiterVerification(userId, companyId) {
+    return new Promise((resolve, reject) => {
+      dbConnection.query(
+        "UPDATE employers SET verified = 1, company_id = ? WHERE user_id = ?",
+        [companyId, userId],
+        (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+          resolve(results);
+        }
+      );
+    });
+  }
+
+  static async handleCompanyVerification(user, companyData) {
+    try {
+      const userId = user.user_id;
+
+      // Create a new entry in the companies table
+      const companyId = await Company.createCompany(companyData);
+
+      // Update the employers table with the company information and set verification status
+      await User.updateRecruiterVerification(userId, companyId);
+
+      return companyId;
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
