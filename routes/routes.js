@@ -1,4 +1,5 @@
 const express = require("express");
+const dbConnection = require("../config/db-config");
 const { authenticateToken } = require("../middleware/authMiddleware");
 const authController = require("../controllers/authController");
 const User = require("../models/user");
@@ -27,9 +28,21 @@ router.get("/about-us", (req, res) => {
 });
 
 router.get("/company-overview", (req, res) => {
-  res.render("company-overview", { title: "JobConqueror - Company Overview" });
-});
+  // Perform a database query to retrieve company data
+  dbConnection.query("SELECT * FROM companies", (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Internal Server Error");
+    }
 
+    // Pass the retrieved data to the rendering function
+    res.render("company-overview", {
+      title: "JobConqueror - Company Overview",
+      user: req.user,
+      companies: results,
+    });
+  });
+});
 router.get("/contact-us", (req, res) => {
   res.render("contact-us", { title: "JobConqueror - Contact us" });
 });
