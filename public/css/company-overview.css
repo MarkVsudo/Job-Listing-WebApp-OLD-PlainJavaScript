@@ -1,0 +1,31 @@
+.companies-head {
+  background-color: var(--dark-blue);
+  position: relative;
+  margin: 4rem;
+}
+
+.companies-head div {
+  color: var(--light-blue);
+  font-size: 4rem;
+}
+
+.num-companies {
+  color: var(--cyan);
+  font-size: 6rem;
+}
+
+.companies-head img {
+  height: 20rem;
+  width: 50rem;
+  object-fit: cover;
+  transform: rotate(-10deg);
+}
+
+#companies {
+  background-color: white;
+  margin-inline: 4rem;
+}
+
+.best-company-block {
+  border-radius: 1rem;
+}
