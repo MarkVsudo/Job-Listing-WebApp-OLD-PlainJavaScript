@@ -27,5 +27,27 @@
 }
 
 .best-company-block {
+  position: relative;
   border-radius: 1rem;
+  height: 350px;
+  background-color: var(--light-blue);
+}
+
+.banner-main {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.logo-main {
+  object-fit: cover;
+  width: 150px;
+  height: 100px;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -60%);
 }
