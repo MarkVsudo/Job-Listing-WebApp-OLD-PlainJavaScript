@@ -1,0 +1,20 @@
+.contact-block {
+  background-color: var(--blue-gray);
+}
+
+.contact-text-1 {
+  color: var(--cyan) !important;
+}
+
+.contact-text-2 {
+  color: var(--light-blue) !important;
+}
+
+.btn-contact {
+  background-color: var(--cyan) !important;
+  color: var(--light-blue) !important;
+}
+
+.btn-contact:is(:hover) {
+  background-color: var(--blue-gray) !important;
+}
