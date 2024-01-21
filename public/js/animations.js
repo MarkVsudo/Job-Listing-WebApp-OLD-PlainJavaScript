@@ -1,3 +1,5 @@
+// GSAP Animations
+
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 gsap.from(
@@ -130,4 +132,16 @@ gsap.to([".home-ellipse-bg", ".ellipse-categories-bg"], {
   ease: "power1.inOut",
   yoyo: true,
   repeat: -1,
+});
+
+// Back to top button functionality
+
+const backTopBtn = document.querySelector(".back-top-btn");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= 75) {
+    backTopBtn.classList.add("active");
+  } else {
+    backTopBtn.classList.remove("active");
+  }
 });

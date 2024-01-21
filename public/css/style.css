@@ -453,6 +453,45 @@ a {
 
 /*  */
 
+/* Back to top button */
+.back-top-btn {
+  position: fixed;
+  bottom: -50px;
+  right: 20px;
+  background-color: var(--cyan);
+  color: var(--light-blue);
+  font-size: 2.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+  transition: all 250ms ease-in-out;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.back-top-btn:is(:hover, :focus-visible) {
+  background-color: var(--dark-blue);
+  color: var(--cyan);
+  font-size: 2.75rem;
+}
+
+.back-top-btn.active {
+  visibility: visible;
+  transform: translateY(-70px);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.back-top-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+/*  */
+
 footer {
   background-color: var(--dark-blue);
 }

@@ -8,6 +8,7 @@ require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const DOMAIN = process.env.DOMAIN;
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "public")));
@@ -35,5 +36,5 @@ app.use("/form", formRoutes);
 
 // Start your Express server
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT} | ${DOMAIN} |`);
 });

@@ -101,7 +101,7 @@
               >
                 Profile
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-end">
                 <% if (user) { %> <% if(user.role === 'recruiter') {%>
                 <li class="d-flex">
                   <a class="dropdown-item d-flex gap-3" href="/verify-employer">
@@ -212,6 +212,17 @@
     </nav>
     <!--  -->
 
+    <!-- Back to top -->
+    <a
+      href="#top"
+      class="back-top-btn"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <i class="bi bi-arrow-up back-top-arrow"></i>
+    </a>
+
+    <!-- Footer -->
     <footer class="text-center text-lg-start text-white">
       <section class="d-flex justify-content-between p-4 footer-network">
         <div class="me-5">
@@ -259,13 +270,15 @@
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 class="text-uppercase fw-bold">Products</h6>
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #7c4dff; height: 2px"
               />
               <p>
-                <a href="#!" class="text-white footer-hover">Redirect 1</a>
+                <a href="/contact-us" class="text-white footer-hover"
+                  >Contact us</a
+                >
               </p>
               <p>
                 <a href="#!" class="text-white footer-hover">Redirect 2</a>
