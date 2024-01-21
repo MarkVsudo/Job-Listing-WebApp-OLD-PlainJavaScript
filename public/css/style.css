@@ -25,11 +25,25 @@ body {
   font-family: var(--font-family);
   background-color: var(--light-blue) !important;
   overflow-x: hidden;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 a {
   color: white !important;
   text-decoration: none !important;
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Scroll bar */

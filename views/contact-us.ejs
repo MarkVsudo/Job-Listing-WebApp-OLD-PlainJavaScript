@@ -212,36 +212,108 @@
       </div>
     </nav>
 
-    <img src="./assets/ellipse-contact-1.svg" alt="" class="" />
-    <img src="./assets/ellipse-contact-2.svg" alt="" class="" />
-
-    <div class="container d-flex p-3 gap-3 contact-block">
-      <img src="./assets/contact-gif.gif" alt="Contact us gif" />
-      <div class="d-flex flex-column gap-3">
-        <span class="h3 contact-text-1">Let's talk.</span>
-        <span class="h3 contact-text-2">Enter your question in the form.</span>
-        <form action=""></form>
-        <div class="d-flex justify-content-between align-items-center">
-          <button type="button" class="btn btn-contact mb-5 fw-medium">
-            Send
-          </button>
-          <div class="d-flex flex-column gap-2">
-            <div class="d-flex gap-1 align-items-center">
-              <i class="bi bi-envelope"></i>
-              <div class="d-flex flex-column justify-content-between">
-                <span>Email</span><span>example@email.com</span>
+    <section id="contactUs" class="position-relative overflow-hidden">
+      <div
+        class="container d-flex justify-content-evenly p-5 gap-3 col-7 contact-block"
+      >
+        <img
+          src="./assets/ellipse-contact-1.svg"
+          alt=""
+          class="ellipse-contact-1 position-absolute"
+        />
+        <img
+          src="./assets/ellipse-contact-2.svg"
+          alt=""
+          class="ellipse-contact-2 position-absolute"
+        />
+        <img
+          src="./assets/contact-gif.gif"
+          alt="Contact us gif"
+          class="contact-gif"
+        />
+        <div class="d-flex flex-column gap-3">
+          <span class="h3 contact-text-1">Let's talk.</span>
+          <span class="h3 contact-text-2"
+            >Enter your question in the form.</span
+          >
+          <form action="">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Enter last name"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                />
               </div>
             </div>
-            <div class="d-flex gap-1 align-items-center">
-              <i class="bi bi-telephone"></i>
-              <div class="d-flex flex-column justify-content-between">
-                <span>Phone</span><span>+359 82 671 1632</span>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="textarea">Text Area</label>
+                <textarea
+                  class="form-control"
+                  id="textarea"
+                  rows="4"
+                  placeholder="Enter your text"
+                ></textarea>
+              </div>
+            </div>
+          </form>
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="btn btn-contact mb-5 px-4 fw-medium">
+              Send
+            </button>
+            <div class="d-flex flex-column gap-2">
+              <div
+                class="d-flex gap-2 px-3 py-2 align-items-center other-contacts"
+              >
+                <div
+                  class="other-contact-icon-wrapper position-relative d-grid justify-content-center align-content-center"
+                >
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <span class="fw-bold">Email</span
+                  ><a
+                    href="mailto:example@email.com"
+                    class="fw-medium other-contact-link"
+                    >example@email.com</a
+                  >
+                </div>
+              </div>
+              <div
+                class="d-flex gap-2 px-3 py-2 align-items-center other-contacts"
+              >
+                <div
+                  class="other-contact-icon-wrapper position-relative d-grid justify-content-center align-content-center"
+                >
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <span class="fw-bold">Phone</span
+                  ><a
+                    href="tel:+359826711632"
+                    class="fw-medium other-contact-link"
+                    >+359 82 671 1632</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!--  -->
 
     <!-- Back to top -->

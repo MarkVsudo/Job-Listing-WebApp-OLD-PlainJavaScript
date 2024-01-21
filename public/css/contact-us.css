@@ -1,5 +1,6 @@
 .contact-block {
   background-color: var(--blue-gray);
+  margin-block: 10rem;
 }
 
 .contact-text-1 {
@@ -17,4 +18,39 @@
 
 .btn-contact:is(:hover) {
   background-color: var(--blue-gray) !important;
+}
+
+.ellipse-contact-1 {
+  left: -5rem;
+  top: 0;
+}
+
+.ellipse-contact-2 {
+  right: -5rem;
+  bottom: 0;
+}
+
+.contact-gif {
+  width: 35%;
+  object-fit: cover;
+}
+
+.other-contacts {
+  background-color: var(--light-blue);
+  border-radius: 3rem;
+}
+
+.other-contact-icon-wrapper {
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .25rem;
+  font-size: 1.125rem;
+  aspect-ratio: 1/1;
+  color: var(--light-blue);
+}
+
+.other-contact-link {
+  color: black !important;
 }
