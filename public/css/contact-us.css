@@ -12,12 +12,14 @@
 }
 
 .btn-contact {
+
   background-color: var(--cyan) !important;
   color: var(--light-blue) !important;
 }
 
 .btn-contact:is(:hover) {
   background-color: var(--blue-gray) !important;
+  border: 1px solid var(--light-blue) !important;
 }
 
 .ellipse-contact-1 {
@@ -32,7 +34,7 @@
 
 .contact-gif {
   width: 35%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .other-contacts {
@@ -53,4 +55,33 @@
 
 .other-contact-link {
   color: black !important;
+}
+
+#contactLastName,
+#contactEmail,
+#contactMessage {
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--light-blue) !important;
+  border-radius: 0 !important;
+}
+
+#contactLastName:is(:active, :focus),
+#contactEmail:is(:active, :focus),
+#contactMessage:is(:active, :focus) {
+  border-color: white !important;
+  box-shadow: none !important;
+}
+
+label[for="contactLastName"],
+label[for="contactEmail"],
+label[for="contactMessage"] {
+  color: white !important;
+}
+
+label[for="contactLastName"]::after,
+label[for="contactEmail"]::after,
+label[for="contactMessage"]::after {
+  background-color: transparent !important;
 }
