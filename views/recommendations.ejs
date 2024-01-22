@@ -6,11 +6,7 @@
     <title><%= title %></title>
     <link rel="icon" type="image/x-icon" href="./assets/app-icon.svg" />
     <link rel="stylesheet" href="/css/style.css" />
-    <style>
-      .form-group {
-        margin-bottom: 1rem;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/contact-us.css" />
   </head>
   <body>
     <!-- Navigation bar -->
@@ -42,7 +38,7 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
-                class="nav-link active text-uppercase fw-bold"
+                class="nav-link text-uppercase fw-bold"
                 aria-current="page"
                 href="/"
                 >Home</a
@@ -68,15 +64,15 @@
               <a
                 class="nav-link text-uppercase fw-bold"
                 aria-current="page"
-                href="#"
+                href="/blog"
                 >Blog</a
               >
             </li>
             <li class="nav-item">
               <a
-                class="nav-link text-uppercase fw-bold"
+                class="nav-link text-uppercase fw-bold active"
                 aria-current="page"
-                href="/recommendations"
+                href="#"
                 >Recommendations</a
               >
             </li>
@@ -107,9 +103,9 @@
                 Profile
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <% if (user) { %>
+                <% if (user) { %> <% if(user.role === 'recruiter') {%>
                 <li class="d-flex">
-                  <a class="dropdown-item d-flex gap-3" href="#">
+                  <a class="dropdown-item d-flex gap-3" href="/verify-employer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -125,6 +121,25 @@
                     Dashboard</a
                   >
                 </li>
+                <% } else { %>
+                <li class="d-flex">
+                  <a class="dropdown-item d-flex gap-3" href="/blog">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="currentColor"
+                      class="bi bi-columns-gap"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"
+                      />
+                    </svg>
+                    Dashboard</a
+                  >
+                </li>
+                <% } %>
                 <li class="d-flex">
                   <a class="dropdown-item d-flex gap-3" href="/logout">
                     <svg
@@ -196,111 +211,6 @@
         </div>
       </div>
     </nav>
-    <!--  -->
-
-    <div class="container mt-5 mb-5 col-lg-5 col-md-7">
-      <h2 class="mb-4">Company Information Form</h2>
-
-      <!-- Company Information Form -->
-      <form action="/verify-employer" method="post">
-        <div class="form-group">
-          <label for="name">Company Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="industry">Industry:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="industry"
-            name="industry"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="size">Size:</label>
-          <select class="form-control" id="size" name="size">
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="headquarters">Headquarters:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="headquarters"
-            name="headquarters"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="website">Website:</label>
-          <input type="text" class="form-control" id="website" name="website" />
-        </div>
-
-        <div class="form-group">
-          <label for="logo">Logo Image:</label>
-          <input type="text" class="form-control" id="logo" name="logo" />
-        </div>
-
-        <div class="form-group">
-          <label for="banner">Banner Image:</label>
-          <input type="text" class="form-control" id="banner" name="banner" />
-        </div>
-
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <textarea
-            class="form-control"
-            id="description"
-            name="description"
-            rows="4"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="founded_year">Founded Year:</label>
-          <input
-            type="number"
-            class="form-control"
-            id="founded_year"
-            name="founded_year"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="contact_email">Contact Email:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="contact_email"
-            name="contact_email"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="contact_phone">Contact Phone:</label>
-          <input
-            type="tel"
-            class="form-control"
-            id="contact_phone"
-            name="contact_phone"
-          />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
     <!--  -->
 
     <!-- Back to top -->

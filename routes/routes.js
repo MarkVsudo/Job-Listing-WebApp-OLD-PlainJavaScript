@@ -15,6 +15,13 @@ router.get("/blog", authenticateToken, (req, res) => {
   res.render("blog", { title: "JobConqueror - Blog", user: req.user });
 });
 
+router.get("/recommendations", authenticateToken, (req, res) => {
+  res.render("recommendations", {
+    title: "JobConqueror - Recommendations",
+    user: req.user,
+  });
+});
+
 router.get("/contact-us", authenticateToken, (req, res) => {
   res.render("contact-us", {
     title: "JobConqueror - Contact us",
