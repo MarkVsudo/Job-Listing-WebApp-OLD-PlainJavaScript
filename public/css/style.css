@@ -134,6 +134,15 @@ a {
   right: 5rem;
 }
 
+.home-search .input-group-text {
+  background-color: white !important;
+  border-right: none !important;
+}
+
+.home-search .form-control {
+  border-left: none !important;
+}
+
 .stats-home {
   color: var(--dark-blue);
 }

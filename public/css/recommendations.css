@@ -1,16 +1,16 @@
-.recommendations-head{
+.recommendations-head {
     background-color: var(--dark-blue);
     position: relative;
     overflow: hidden;
 }
 
-.recommendations-head .recommendations-head-bg-1{
+.recommendations-head .recommendations-head-bg-1 {
     width: 15rem;
     height: 15rem;
     aspect-ratio: 1/1;
     transform: rotate(45deg);
-    background-color: var(--blue-gray);  
-    position: absolute;  
+    background-color: var(--blue-gray);
+    position: absolute;
     top: 0;
     left: -5rem;
     -webkit-box-shadow: 0px 0px 0px 30px #404b6962;
@@ -18,13 +18,13 @@
     box-shadow: 0px 0px 0px 30px #404b6962;
 }
 
-.recommendations-head .recommendations-head-bg-2{
+.recommendations-head .recommendations-head-bg-2 {
     width: 15rem;
     height: 15rem;
     aspect-ratio: 1/1;
     transform: rotate(45deg);
-    background-color: var(--blue-gray);  
-    position: absolute;  
+    background-color: var(--blue-gray);
+    position: absolute;
     top: 0;
     right: -5rem;
     -webkit-box-shadow: 0px 0px 0px 30px #404b6962;
@@ -33,19 +33,19 @@
 }
 
 
-.recommendations-head span{
+.recommendations-head span {
     color: var(--light-blue);
     line-height: 3rem;
 }
 
 
-.recom-topics{
+.recom-topics {
     height: 1rem;
 }
 
-.recom-topics button{
+.recom-topics button {
     display: flex;
-    white-space:nowrap;
+    white-space: nowrap;
     align-content: center;
     flex-wrap: wrap;
     border-radius: 1rem;
@@ -58,17 +58,12 @@
     transition: all 250ms ease-in-out;
 }
 
-/* .recom-topics button:is(:active, :focus){
-    background-color: var(--cyan);
-    color: aliceblue;
-} */
-
-.topic-active-btn{
+.topic-active-btn {
     background-color: var(--cyan) !important;
     color: aliceblue !important;
 }
 
-.recom-topics .input-group .form-floating .form-control{
+.recom-topics .input-group .form-floating .form-control {
     background-color: var(--light-blue) !important;
     border-radius: 1rem !important;
     border-left: none !important;
@@ -78,7 +73,7 @@
 
 }
 
-.recom-topics .input-group .input-group-text{
+.recom-topics .input-group .input-group-text {
     background-color: transparent;
     border-radius: 1rem !important;
     border-right: 0 !important;
@@ -87,31 +82,31 @@
     border-bottom-right-radius: 0 !important;
 }
 
-.input-group{
+.input-group {
     width: 25% !important;
 
 }
 
-.form-floating>.form-control{
+.form-floating>.form-control {
     height: 2.4rem !important;
     min-height: 2.4rem !important;
 }
 
-label[for='topicSearch']{
+label[for='topicSearch'] {
     padding: 0.5rem .75rem !important;
 }
 
 label[for="topicSearch"]::after {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
-.recom-separate img{
+.recom-separate img {
     object-fit: cover;
     border-radius: 1rem;
     width: 100%;
     aspect-ratio: 7/4;
 }
 
-.recom-separate-text a{
+.recom-separate-text a {
     color: var(--cyan) !important;
 }
