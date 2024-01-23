@@ -225,14 +225,14 @@
     <section id="recommendations" class="container py-5 d-flex flex-column gap-5">
 
       <div class="recom-topics d-flex justify-content-center gap-2">
-        <button class="topic-button">All (16)</button>
-        <button class="topic-button">Interview</button>
-        <button class="topic-button">CV Writing</button>
-        <button class="topic-button">Soft skills</button>
-        <button class="topic-button">Confidence</button>
-        <button class="topic-button">Patience</button>
-        <button class="topic-button">Applying</button>
-        <button class="topic-button">News</button>
+        <button class="topic-button topic-active-btn" id="allTopic">All (16)</button>
+        <button class="topic-button" id="interviewTopic">Interview</button>
+        <button class="topic-button" id="cvTopic">CV Writing</button>
+        <button class="topic-button" id="softSkillsTopic">Soft skills</button>
+        <button class="topic-button" id="confidenceTopic">Confidence</button>
+        <button class="topic-button" id="patienceTopic">Patience</button>
+        <button class="topic-button" id="applyingTopic">Applying</button>
+        <button class="topic-button" id="newsTopic">News</button>
         <div class="input-group">
           <span class="input-group-text" ><i class="bi bi-search"></i></span>
           <div class="form-floating">
@@ -244,7 +244,7 @@
 
       <div class="recom-main container">
         <div class="row py-3 g-3">
-          <div class="col-md-4 ">
+          <div class="col-md-4 interview-article">
             <div class="recom-separate d-flex flex-column align-items-start">
               <img src="/assets/recommendations-article-1.jpg" alt="Recommendations Article Image">
               <div class="recom-separate-text d-flex flex-column pt-2">
@@ -254,7 +254,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 cv-article">
             <div class="recom-separate d-flex flex-column align-items-start">
               <img src="/assets/recommendations-article-2.png" alt="Recommendations Article Image">
               <div class="recom-separate-text d-flex flex-column pt-2">
@@ -264,7 +264,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 soft-skills-article">
             <div class="recom-separate d-flex flex-column align-items-start">
               <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
               <div class="recom-separate-text d-flex flex-column pt-2">
@@ -274,6 +274,47 @@
               </div>
             </div>
           </div>
+          <div class="col-md-4 confidence-article">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 patience-article">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 applying-article">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 news-article">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
@@ -435,6 +476,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
     <!--  -->
     <script type="module" src="./js/animations.js"></script>
+    <script type="module" src="./js/recommendations.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"

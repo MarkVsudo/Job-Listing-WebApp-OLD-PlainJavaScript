@@ -58,9 +58,14 @@
     transition: all 250ms ease-in-out;
 }
 
-.recom-topics button:is(:active, :focus){
+/* .recom-topics button:is(:active, :focus){
     background-color: var(--cyan);
     color: aliceblue;
+} */
+
+.topic-active-btn{
+    background-color: var(--cyan) !important;
+    color: aliceblue !important;
 }
 
 .recom-topics .input-group .form-floating .form-control{
