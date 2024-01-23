@@ -6,7 +6,7 @@
     <title><%= title %></title>
     <link rel="icon" type="image/x-icon" href="./assets/app-icon.svg" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/contact-us.css" />
+    <link rel="stylesheet" href="/css/recommendations.css" />
   </head>
   <body>
     <!-- Navigation bar -->
@@ -212,6 +212,71 @@
       </div>
     </nav>
     <!--  -->
+
+    <!-- Recommendations start -->
+    <div class="recommendations-head container-fluid text-center p-5">
+      <span class="h1">Business Insights: Tips, Strategies and <br>
+        Trends for Entrepreneurs and <br>
+        Professionals</span>
+    </div>
+
+    <section id="recommendations" class="container py-5 d-flex flex-column gap-5">
+
+      <div class="recom-topics d-flex justify-content-center gap-2">
+        <button class="topic-button">All (16)</button>
+        <button class="topic-button">Interview</button>
+        <button class="topic-button">CV Writing</button>
+        <button class="topic-button">Soft skills</button>
+        <button class="topic-button">Confidence</button>
+        <button class="topic-button">Patience</button>
+        <button class="topic-button">Applying</button>
+        <button class="topic-button">News</button>
+        <div class="input-group">
+          <span class="input-group-text" ><i class="bi bi-search"></i></span>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="topicSearch" placeholder="Username  ">
+            <label for="topicSearch">Search...</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="recom-main container">
+        <div class="row py-3">
+          <div class="col-md-4">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-1.jpg" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-2.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="recom-separate d-flex flex-column align-items-start">
+              <img src="/assets/recommendations-article-3.png" alt="Recommendations Article Image">
+              <div class="recom-separate-text d-flex flex-column pt-2">
+                <span class="h5">Bla bla bla bla bla bla bla...</span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!-- Recommendations end -->
 
     <!-- Back to top -->
     <a

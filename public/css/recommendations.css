@@ -1,0 +1,81 @@
+.recommendations-head{
+    background-color: var(--dark-blue);
+}
+
+.recommendations-head span{
+    color: var(--light-blue);
+    line-height: 3rem;
+}
+
+
+.recom-topics{
+    height: 1rem;
+}
+
+.recom-topics button{
+    display: flex;
+    white-space:nowrap;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--dark-blue);
+    color: var(--dark-blue);
+    padding: 1.125rem .75rem;
+    font-size: 1.125rem;
+    /* height: 1rem; */
+    transition: all 250ms ease-in-out;
+}
+
+.recom-topics button:is(:active, :focus){
+    background-color: var(--cyan);
+    color: aliceblue;
+}
+
+.recom-topics .input-group .form-floating .form-control{
+    background-color: var(--light-blue) !important;
+    border-radius: 1rem !important;
+    border-left: none !important;
+    border-color: var(--dark-blue) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+
+}
+
+.recom-topics .input-group .input-group-text{
+    background-color: transparent;
+    border-radius: 1rem !important;
+    border-right: 0 !important;
+    border-color: var(--dark-blue) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.input-group{
+    width: 25% !important;
+
+}
+
+.form-floating>.form-control{
+    height: 2.4rem !important;
+    min-height: 2.4rem !important;
+}
+
+label[for='topicSearch']{
+    padding: 0.5rem .75rem !important;
+}
+
+label[for="topicSearch"]::after {
+  background-color: transparent !important;
+}
+
+.recom-separate img{
+    object-fit: cover;
+    border-radius: 1rem;
+    width: 100%;
+    aspect-ratio: 7/4;
+}
+
+.recom-separate-text a{
+    color: var(--cyan) !important;
+}
