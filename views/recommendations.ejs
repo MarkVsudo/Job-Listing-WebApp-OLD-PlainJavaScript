@@ -268,7 +268,12 @@
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s.
                 </p>
-                <a href="#">Learn more</a>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
@@ -385,6 +390,44 @@
           </div>
         </div>
       </div>
+
+      <!-- Article modals start -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Learn how to write the perfect CV
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              This is some placeholder content to show the scrolling behavior
+              for modals. We use repeated line breaks to demonstrate how content
+              can exceed minimum inner height, thereby showing inner scrolling.
+              When content becomes longer than the predefined max-height of
+              modal, content will be cropped and scrollable within the modal.
+              This content should appear at the bottom after you scroll.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Article modals end -->
     </section>
     <!-- Recommendations end -->
 
