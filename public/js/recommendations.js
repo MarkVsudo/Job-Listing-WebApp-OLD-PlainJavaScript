@@ -12,7 +12,30 @@ document.addEventListener("DOMContentLoaded", function () {
   let applyingArticles = document.querySelectorAll(".applying-article");
   let newsArticles = document.querySelectorAll(".news-article");
 
+  // Search article functionality
+  let searchInput = document.getElementById("topicSearch");
+
+  searchInput.addEventListener("input", function () {
+    let searchTerm = searchInput.value.toLowerCase();
+
+    // Reset display for all articles
+    hideAllArticles();
+
+    document
+      .querySelectorAll(".recom-separate-text span")
+      .forEach(function (element) {
+        let articleTitle = element.innerText.toLowerCase();
+
+        // Check if the article title contains the search term
+        if (articleTitle.includes(searchTerm)) {
+          // Show the parent article container
+          element.closest(".all-articles").style.display = "block";
+        }
+      });
+  });
+
   function hideAllArticles() {
+    // Reset display for all articles
     [
       allArticles,
       interviewArticles,
@@ -81,3 +104,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Search article functionality
+let searchInput = document.getElementById("topicSearch");
+
+document
+  .querySelectorAll(".recom-separate-text span")
+  .forEach(function (element) {
+    let articleTitle = element.innerText;
+
+    if (searchInput.value.includes(articleTitle)) {
+      allArticles.style.display = "none";
+    }
+  });
