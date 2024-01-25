@@ -236,7 +236,7 @@
           <span class="h3 contact-text-2"
             >Enter your question in the form.</span
           >
-          <form action="">
+          <form action="/contact-us-form" method="post">
             <div class="row g-2 pb-2">
               <div class="col-md">
                 <div class="form-floating">
@@ -244,6 +244,7 @@
                     type="text"
                     class="form-control"
                     id="contactLastName"
+                    name="contactLastName"
                     placeholder="Username"
                     required
                   />
@@ -256,6 +257,7 @@
                     type="email"
                     class="form-control"
                     id="contactEmail"
+                    name="contactEmail"
                     placeholder="name@example.com"
                     required
                   />
@@ -270,6 +272,7 @@
                     class="form-control"
                     placeholder="Leave a comment here"
                     id="contactMessage"
+                    name="contactMessage"
                     required
                     style="min-height: 100px; max-height: 150px"
                   ></textarea>
@@ -278,7 +281,7 @@
               </div>
             </div>
             <button
-              type="button"
+              type="submit"
               class="btn btn-contact container-fluid px-4 mt-3 fw-medium"
             >
               Send

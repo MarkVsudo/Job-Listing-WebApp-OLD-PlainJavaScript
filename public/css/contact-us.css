@@ -25,11 +25,13 @@
 .ellipse-contact-1 {
   left: -5rem;
   top: 0;
+  z-index: -1;
 }
 
 .ellipse-contact-2 {
   right: -5rem;
   bottom: 0;
+  z-index: -1;
 }
 
 .contact-gif {

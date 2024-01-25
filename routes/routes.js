@@ -1,20 +1,25 @@
 const express = require("express");
-const dbConnection = require("../config/db-config");
+const router = express.Router();
+const fs = require("fs");
+const path = require("path");
+
+// Middleware and Controllers
 const { authenticateToken } = require("../middleware/authMiddleware");
 const authController = require("../controllers/authController");
+const nodemailerConfig = require("../config/nodemailer-config");
+const dbConnection = require("../config/db-config");
 const User = require("../models/user");
-const router = express.Router();
-const fs = require('fs');
-const path = require('path');
 
+// Authentication Routes
 router.use("/", authController);
 
+// Home Page
 router.get("/", authenticateToken, (req, res) => {
   res.render("index", { title: "JobConqueror - Homepage", user: req.user });
 });
 
+// Other Pages
 router.get("/who-we-are", authenticateToken, (req, res) => {
-
   res.render("who-we-are", {
     title: "JobConqueror - Who We Are",
     user: req.user,
@@ -22,13 +27,19 @@ router.get("/who-we-are", authenticateToken, (req, res) => {
 });
 
 router.get("/recommendations", authenticateToken, (req, res) => {
-      // Read the JSON file
-      const jsonPath = path.join(__dirname, '..', 'public' , 'json', 'articles.json');
-      const articleData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+  // Read the JSON file
+  const jsonPath = path.join(
+    __dirname,
+    "..",
+    "public",
+    "json",
+    "articles.json"
+  );
+  const articleData = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
   res.render("recommendations", {
     title: "JobConqueror - Recommendations",
     user: req.user,
-    articleData
+    articleData,
   });
 });
 
@@ -37,6 +48,27 @@ router.get("/contact-us", authenticateToken, (req, res) => {
     title: "JobConqueror - Contact us",
     user: req.user,
   });
+});
+
+// Contact Us Form Submission
+router.post("/contact-us-form", authenticateToken, (req, res) => {
+  const { contactLastName, contactEmail, contactMessage } = req.body;
+
+  const mailOptions = {
+    from: contactEmail,
+    to: process.env.EMAIL_EMAIL,
+    subject: "User form submission in contact us page",
+    text: `Name: ${contactLastName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`,
+  };
+
+  nodemailerConfig.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.error(error);
+    }
+    console.log("Email sent:", info.response);
+  });
+
+  res.send("Email sent successfully!");
 });
 
 router.get("/login", (req, res) => {
@@ -66,9 +98,6 @@ router.get("/company-overview", (req, res) => {
       companies: results,
     });
   });
-});
-router.get("/contact-us", (req, res) => {
-  res.render("contact-us", { title: "JobConqueror - Contact us" });
 });
 
 router.get("/customer-support", (req, res) => {
@@ -195,7 +224,7 @@ router.get("/profile", (req, res) => {
   res.render("profile", { title: "JobConqueror - Profile" });
 });
 
-// Route handler for 404 errors
+// Error Pages
 router.get("/not-found", (req, res) => {
   res.render("/not-found", { title: "JobConqueror - 404 Not Found" });
 });
