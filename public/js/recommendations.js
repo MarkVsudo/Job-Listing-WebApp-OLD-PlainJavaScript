@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Active button declaration
   topicButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       topicButtons.forEach((otherBtn) => {

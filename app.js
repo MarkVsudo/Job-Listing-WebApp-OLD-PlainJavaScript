@@ -34,6 +34,7 @@ app.use(
 app.use("/", require("./routes/routes"));
 app.use("/form", formRoutes);
 
+
 // Start your Express server
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT} | ${DOMAIN} |`);

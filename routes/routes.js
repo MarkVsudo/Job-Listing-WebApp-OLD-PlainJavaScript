@@ -4,6 +4,8 @@ const { authenticateToken } = require("../middleware/authMiddleware");
 const authController = require("../controllers/authController");
 const User = require("../models/user");
 const router = express.Router();
+const fs = require('fs');
+const path = require('path');
 
 router.use("/", authController);
 
@@ -12,6 +14,7 @@ router.get("/", authenticateToken, (req, res) => {
 });
 
 router.get("/who-we-are", authenticateToken, (req, res) => {
+
   res.render("who-we-are", {
     title: "JobConqueror - Who We Are",
     user: req.user,
@@ -19,9 +22,13 @@ router.get("/who-we-are", authenticateToken, (req, res) => {
 });
 
 router.get("/recommendations", authenticateToken, (req, res) => {
+      // Read the JSON file
+      const jsonPath = path.join(__dirname, '..', 'public' , 'json', 'articles.json');
+      const articleData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   res.render("recommendations", {
     title: "JobConqueror - Recommendations",
     user: req.user,
+    articleData
   });
 });
 

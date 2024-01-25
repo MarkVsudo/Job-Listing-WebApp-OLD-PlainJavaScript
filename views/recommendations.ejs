@@ -407,7 +407,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Learn how to write the perfect CV
+                <%= articleData.article.title %>
               </h1>
               <button
                 type="button"
@@ -417,12 +417,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              This is some placeholder content to show the scrolling behavior
-              for modals. We use repeated line breaks to demonstrate how content
-              can exceed minimum inner height, thereby showing inner scrolling.
-              When content becomes longer than the predefined max-height of
-              modal, content will be cropped and scrollable within the modal.
-              This content should appear at the bottom after you scroll.
+              <%= articleData.article.text %>
             </div>
           </div>
         </div>
