@@ -1,19 +1,26 @@
+// Importing necessary modules and packages
 const express = require("express");
-const { comparePasswords, hashPassword } = require("../utils/bcryptUtils");
-const { createAuthToken } = require("../utils/authUtils");
-const nodemailerConfig = require("../config/nodemailer-config");
-const jwt = require("jsonwebtoken");
-const User = require("../models/user");
-const Employer = require("../models/employer");
-const crypto = require("crypto");
-require("dotenv").config();
 const router = express.Router();
 const flash = require("express-flash");
+const jwt = require("jsonwebtoken");
+const nodemailerConfig = require("../config/nodemailer-config");
 
+// Importing utility functions
+const { comparePasswords, hashPassword } = require("../utils/bcryptUtils");
+const { createAuthToken } = require("../utils/authUtils");
+
+// Importing models
+const User = require("../models/user");
+const Employer = require("../models/employer");
+
+// Loading environment variables
+require("dotenv").config();
+
+// Adding flash middleware to the router
 router.use(flash());
 
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, remember } = req.body;
 
   try {
     const user = await User.findByEmail(email);
@@ -24,11 +31,13 @@ router.post("/login", async (req, res) => {
       return res.redirect("/login");
     }
 
-    // Create authentication token
-    const token = createAuthToken(user);
+    // Create authentication token with "remember" value
+    const token = createAuthToken(user, remember);
 
     // Set the token as a cookie
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      maxAge: remember ? 30 * 24 * 60 * 60 * 1000 : 1 * 24 * 60 * 60 * 1000,
+    }); // Set cookie expiration based on "remember"
 
     // Flash success message
     req.flash("success", "You successfully logged in.");

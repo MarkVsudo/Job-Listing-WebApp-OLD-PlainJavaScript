@@ -37,6 +37,7 @@
 .contact-gif {
   width: 35%;
   object-fit: contain;
+  filter: brightness(0.6);
 }
 
 .other-contacts {
