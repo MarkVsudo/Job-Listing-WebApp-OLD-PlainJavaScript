@@ -1,7 +1,30 @@
 {
-    "article": {
-      "title": "Learn how to write the perfect CV",
-      "text": "Crafting an effective CV is essential for standing out in the competitive job market. Begin by clearly outlining your professional experience, highlighting key achievements, and emphasizing skills relevant to the desired role. Tailor the content to align with the specific job requirements, showcasing your unique qualifications and demonstrating your value to potential employers. Utilize a clean and professional format, ensuring readability and coherence. Regularly update your CV to reflect your latest accomplishments and maintain its relevance in the dynamic job landscape."
-    }
+  "cvWriting": {
+    "title": "Learn how to write the perfect CV",
+    "text": "Crafting an effective CV is essential for standing out in the competitive job market. Begin by clearly outlining your professional experience, highlighting key achievements, and emphasizing skills relevant to the desired role. Tailor the content to align with the specific job requirements, showcasing your unique qualifications and demonstrating your value to potential employers. Utilize a clean and professional format, ensuring readability and coherence. Regularly update your CV to reflect your latest accomplishments and maintain its relevance in the dynamic job landscape."
+  },
+  "softSkills": {
+    "title": "Which soft skills are required",
+    "text": "Soft skills play a crucial role in professional success. Explore the essential soft skills that employers value, such as communication, teamwork, adaptability, and problem-solving. Understand how cultivating these skills can enhance your performance in the workplace and contribute to your overall career development."
+  },
+  "applying": {
+    "title": "What should you consider before applying for a job",
+    "text": "Before applying for a job, it's important to consider various factors that can impact your decision. Explore key considerations such as company culture, job responsibilities, growth opportunities, and work-life balance. Assessing these factors beforehand can help you make informed decisions and find a job that aligns with your career goals."
+  },
+  "patience": {
+    "title": "How to become more patient in today's fast world",
+    "text": "In today's fast-paced world, cultivating patience is a valuable skill. Discover strategies to enhance your patience, manage stress, and navigate challenging situations with a calm and composed mindset. Developing patience can lead to better decision-making, improved relationships, and a more fulfilling personal and professional life."
+  },
+  "news": {
+    "title": "Latest news in the job market",
+    "text": "Stay updated on the latest trends and developments in the job market. Explore insights into industry changes, emerging job roles, and skill demands. Keeping abreast of the job market news can help you make informed career decisions, adapt to evolving trends, and position yourself for success in your professional journey."
+  },
+  "confidence": {
+    "title": "Become self-confident and master your mind",
+    "text": "Self-confidence is a key component of personal and professional success. Learn strategies to boost your self-confidence, overcome self-doubt, and master your mindset. Cultivating self-confidence can positively impact your career, relationships, and overall well-being. Take proactive steps to build a strong and resilient sense of self."
+  },
+  "interview": {
+    "title": "Some potential questions recruiters might ask you in an interview",
+    "text": "Prepare for job interviews by familiarizing yourself with common questions recruiters might ask. Explore strategies for crafting compelling responses, showcasing your skills and experience, and making a positive impression. Being well-prepared for potential interview questions can increase your confidence and enhance your chances of success in securing the job."
   }
-  
+}

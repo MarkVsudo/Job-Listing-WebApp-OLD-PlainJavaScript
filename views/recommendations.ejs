@@ -262,16 +262,12 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5">Learn how to write the perfect CV</span>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
+                <span class="h5"><%= articleData.cvWriting.title %></span>
+                <p><%= (articleData.cvWriting.text).slice(0, 155) %>...</p>
                 <a
                   href="#"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#staticBackdrop1"
                   >Learn more</a
                 >
               </div>
@@ -284,13 +280,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5">Which soft skills are required</span>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
+                <span class="h5"><%= articleData.softSkills.title %></span>
+                <p><%= (articleData.softSkills.text).slice(0, 158) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop2"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
@@ -301,15 +298,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5"
-                  >What should you consider before applying for a job</span
+                <span class="h5"><%= articleData.applying.title %></span>
+                <p><%= (articleData.applying.text).slice(0, 151) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop3"
+                  >Learn more</a
                 >
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
               </div>
             </div>
           </div>
@@ -320,15 +316,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5"
-                  >How to become more patient in today's fast world</span
+                <span class="h5"><%= articleData.patience.title %></span>
+                <p><%= (articleData.patience.text).slice(0, 156) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop4"
+                  >Learn more</a
                 >
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
               </div>
             </div>
           </div>
@@ -339,13 +334,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5">Latest news in the job market</span>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
+                <span class="h5"><%= articleData.news.title %></span>
+                <p><%= (articleData.news.text).slice(0, 156) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop5"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
@@ -356,15 +352,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5"
-                  >Become self confident and master your mind</span
+                <span class="h5"><%= articleData.confidence.title %></span>
+                <p><%= (articleData.confidence.text).slice(0, 157) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop6"
+                  >Learn more</a
                 >
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
               </div>
             </div>
           </div>
@@ -375,16 +370,14 @@
                 alt="Recommendations Article Image"
               />
               <div class="recom-separate-text d-flex flex-column pt-2">
-                <span class="h5"
-                  >Some potential questions recruiters might ask you in an
-                  interview</span
+                <span class="h5"><%= articleData.interview.title %></span>
+                <p><%= (articleData.interview.text).slice(0, 149) %>...</p>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop7"
+                  >Learn more</a
                 >
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-                <a href="#">Learn more</a>
               </div>
             </div>
           </div>
@@ -396,18 +389,18 @@
       <!-- Modal -->
       <div
         class="modal fade"
-        id="staticBackdrop"
+        id="staticBackdrop1"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
         tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
+        aria-labelledby="staticBackdropLabel1"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                <%= articleData.article.title %>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel1">
+                <%= articleData.cvWriting.title %>
               </h1>
               <button
                 type="button"
@@ -416,9 +409,163 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <%= articleData.article.text %>
+            <div class="modal-body"><%= articleData.cvWriting.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop2"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel2"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel2">
+                <%= articleData.softSkills.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
+            <div class="modal-body"><%= articleData.softSkills.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop3"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel3"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel3">
+                <%= articleData.applying.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"><%= articleData.applying.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop4"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel4"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel4">
+                <%= articleData.patience.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"><%= articleData.patience.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop5"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel5"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel5">
+                <%= articleData.news.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"><%= articleData.news.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop6"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel6"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel6">
+                <%= articleData.confidence.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"><%= articleData.confidence.text %></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop7"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel7"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel7">
+                <%= articleData.interview.title %>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"><%= articleData.interview.text %></div>
           </div>
         </div>
       </div>
@@ -495,7 +642,7 @@
                 >
               </p>
               <p>
-                <a href="#!" class="text-white footer-hover">Redirect 2</a>
+                <a href="#!" class="text-white footer-hover">FAQ</a>
               </p>
               <p>
                 <a href="#!" class="text-white footer-hover">Redirect 3</a>
