@@ -6,6 +6,12 @@
     <title><%= title %></title>
     <link rel="icon" type="image/x-icon" href="./assets/app-icon.svg" />
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- TinyMCE -->
+    <script
+      src="https://cdn.tiny.cloud/1/et1ntzkh1cj2zarmflodtwku3jd6w082blysek1xvji5hibb/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <!--  -->
     <style>
       .form-group {
         margin-bottom: 1rem;
@@ -298,9 +304,20 @@
           />
         </div>
 
+        <div class="form-group">
+          <label for="linkedIn_url">LinkedIn URL:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="linkedIn_url"
+            name="linkedIn_url"
+          />
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
     <!--  -->
 
     <!-- Back to top -->
@@ -446,6 +463,27 @@
       </div>
     </footer>
 
+    <!-- TinyMCE -->
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+        ai_request: (request, respondWith) =>
+          respondWith.string(() =>
+            Promise.reject("See docs to implement AI Assistant")
+          ),
+      });
+    </script>
+    <!--  -->
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
