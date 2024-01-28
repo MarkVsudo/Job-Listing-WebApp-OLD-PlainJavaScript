@@ -1,0 +1,15 @@
+.how-it-started {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.how-it-started-text,
+.how-it-started-stats {
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.parent-stat div {
+  background-color: rgb(245, 245, 245);
+  border-radius: 1rem;
+}
