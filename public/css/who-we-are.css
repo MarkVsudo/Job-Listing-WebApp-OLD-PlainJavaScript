@@ -13,3 +13,31 @@
   background-color: rgb(245, 245, 245);
   border-radius: 1rem;
 }
+
+.team-member img {
+  border-radius: 1rem;
+  filter: grayscale(90%);
+  transition: all 250ms ease-in-out;
+}
+
+.team-member img:hover {
+  filter: grayscale(0%);
+}
+
+.team-member-contact {
+  background-color: white;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 500ms ease-in-out;
+}
+
+.team-member:hover .team-member-contact {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-member-contact .bi-linkedin {
+  font-size: 2rem;
+  color: var(--blue-gray);
+}
