@@ -193,6 +193,7 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_email,
       contact_phone,
       linkedIn_url,
+      numEmployees
     } = req.body;
 
     // Call the handleCompanyVerification method
@@ -209,6 +210,7 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_email,
       contact_phone,
       linkedIn_url,
+      numEmployees
     });
 
     res.redirect("/dashboard");
