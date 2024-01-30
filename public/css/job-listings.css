@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
+.modal-filters-body{
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
 [class^="rectangle-jobs-header-"] {
   width: 50px;
   height: 300px;

@@ -258,14 +258,16 @@
         </select>
         <select class="form-select" aria-label="Experience Filter">
           <option selected>Experience:</option>
-          <option value="1">0 - 1 years</option>
-          <option value="2">1 - 2 years</option>
+          <option value="1">No experience</option>
+          <option value="2">0 - 2 years</option>
           <option value="3">2 - 4 years</option>
-          <option value="4">4+ years</option>
+          <option value="4">4 - 6 years</option>
+          <option value="5">6 - 8 years</option>
+          <option value="6">8+ years</option>
         </select>
         <button
           type="button"
-          class="btn btn-outline-secondary d-flex justify-content-between col-2"
+          class="btn btn-outline-secondary d-flex justify-content-between col-2" data-bs-toggle="modal" data-bs-target="#filtersModal"
         >
           More Filters <i class="bi bi-sliders"></i>
         </button>
@@ -275,6 +277,66 @@
         >
           Apply Filters
         </button>
+      </div>
+      <div class="modal fade" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="filtersModalLabel">More filters</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body gap-4 modal-filters-body">
+              <select class="form-select" aria-label="Location Filter">
+                <option selected>Location:</option>
+                <option value="1">Sofia</option>
+                <option value="2">Plovdiv</option>
+                <option value="3">Burgas</option>
+                <option value="4">Varna</option>
+                <option value="5">Pleven</option>
+                <option value="6">Stara Zagora</option>
+              </select>
+              <select class="form-select" aria-label="Job Type Filter">
+                <option selected>Job Type:</option>
+                <option value="1">Intern</option>
+                <option value="2">Part-time</option>
+                <option value="3">Full-time</option>
+                <option value="4">Freelance</option>
+              </select>
+              <select class="form-select" aria-label="Industry Filter">
+                <option selected>Industry:</option>
+                <option value="1">IT</option>
+                <option value="2">Marketing</option>
+                <option value="3">Engineering</option>
+                <option value="4">Services</option>
+              </select>
+              <select class="form-select" aria-label="Experience Filter">
+                <option selected>Experience:</option>
+                <option value="1">No experience</option>
+                <option value="2">0 - 2 years</option>
+                <option value="3">2 - 4 years</option>
+                <option value="4">4 - 6 years</option>
+                <option value="5">6 - 8 years</option>
+                <option value="6">8+ years</option>
+              </select>
+              </select>
+              <select class="form-select" aria-label="Experience Filter">
+                <option selected>Salary range:</option>
+                <option value="1">$500 - $1000</option>
+                <option value="2">$1000 - $2000</option>
+                <option value="3">$2000 - $5000</option>
+                <option value="4">$5000 - $10000</option>
+                <option value="5">$10000+</option>
+              </select>
+              </select>
+              <select class="form-select" aria-label="Experience Filter">
+                <option selected>Company size:</option>
+                <option value="1">Small (1-50 employees)</option>
+                <option value="2">Medium (51-500 employees)</option>
+                <option value="3">Large (500+ employees)</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

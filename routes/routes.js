@@ -100,6 +100,13 @@ router.get("/company-overview", (req, res) => {
   });
 });
 
+router.get("/company", authenticateToken, (req, res) => {
+  res.render("company", {
+    title: "JobConqueror - Company",
+    user: req.user,
+  });
+});
+
 router.get("/customer-support", (req, res) => {
   res.render("customer-support", { title: "JobConqueror - FAQ" });
 });
