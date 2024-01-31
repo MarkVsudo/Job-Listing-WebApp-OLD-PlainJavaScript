@@ -276,178 +276,168 @@
           <span class="h3">Best companies on our platform</span>
         </div>
         <div class="container companies-block d-flex flex-column gap-4">
+          <% companies.forEach((company) => { %>
           <div class="d-flex gap-4">
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
           </div>
           <div class="d-flex gap-4">
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
-            <div class="company-separate p-0">
+            <div class="company-separate p-0 w-100">
               <div class="position-relative">
                 <img
-                  src="https://media.dkcompany.com/sitecore-images/topbillder1537x550px_AO24.jpg?i=gMn1nVpc/18fea8bf-d710-45cb-b30c-3e23f8f38dff&mw=1440"
+                  src="<%= company.banner %>"
                   alt=""
                   class="banner-sub"
-                /><img
-                  src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/construction-company-logo%2C-real-estate-logo-design-template-fbb1bf5a44046d04e6503c514592c213_screen.jpg?ts=1667737322"
-                  alt=""
-                  class="logo-sub"
-                />
+                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
               </div>
               <div
                 class="d-flex flex-column justify-content-center align-items-start p-2"
               >
                 <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5">Alphabet Inc.</span>
+                  <span class="h5"><%= company.name %></span>
                   <div
                     class="d-flex justify-content-center align-items-center gap-1"
                   >
                     <i class="bi bi-person"></i>
-                    <span class="">47 employees</span>
+                    <span class=""><%= company.num_employees %> employees</span>
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link">24 offers</a>
+                <a href="#" class="h4 separate-offer-link"
+                  ><%= company.count_offers %> offers</a
+                >
               </div>
             </div>
           </div>
+          <% }); %>
         </div>
       </div>
     </section>
