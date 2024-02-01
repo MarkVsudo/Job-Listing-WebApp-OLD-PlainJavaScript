@@ -20,13 +20,15 @@
 
 .share-company-btn{
     background-color: white;
-    border-radius: 1rem;
+    border-radius: .5rem;
     border: 1px solid black;
-    height: max-content;
+    height: 3rem;
+    width: 3rem;
 }
 
 .follow-company-btn{
-    height: max-content;
+    height: 3rem;
+    width: max-content;
     background-color: var(--cyan) !important;
     color: white !important;
     transition: all 250ms ease-in-out;
@@ -34,4 +36,15 @@
 
 .follow-company-btn:hover{
     background-color: var(--blue-gray) !important;
+}
+
+.company-about,
+.company-job-offers,
+.company-images,
+.company-benefits,
+.company-other-companies,
+.company-location{
+    box-shadow: 0 0 25px #00000049;
+    border-radius: 1rem;
+    background-color: white;
 }
