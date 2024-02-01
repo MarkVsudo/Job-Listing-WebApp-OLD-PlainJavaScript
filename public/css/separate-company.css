@@ -1,0 +1,37 @@
+.company-head{    
+    height: max-content;
+}
+
+.company-head .fluid-image{
+    height: 17.5rem;
+
+}
+
+.company-head-details{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px #00000049;
+    transform: translateY(-50%);}
+
+.head-company-logo{
+    object-fit: contain;
+    width: 5rem;
+}
+
+.share-company-btn{
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    height: max-content;
+}
+
+.follow-company-btn{
+    height: max-content;
+    background-color: var(--cyan) !important;
+    color: white !important;
+    transition: all 250ms ease-in-out;
+}
+
+.follow-company-btn:hover{
+    background-color: var(--blue-gray) !important;
+}
