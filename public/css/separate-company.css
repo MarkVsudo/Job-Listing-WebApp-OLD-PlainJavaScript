@@ -1,24 +1,25 @@
-.company-head{    
+.company-head {
     height: max-content;
 }
 
-.company-head .fluid-image{
+.company-head .fluid-image {
     height: 17.5rem;
 
 }
 
-.company-head-details{
+.company-head-details {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0 0 25px #00000049;
-    transform: translateY(-50%);}
+    transform: translateY(-50%);
+}
 
-.head-company-logo{
+.head-company-logo {
     object-fit: contain;
     width: 5rem;
 }
 
-.share-company-btn{
+.share-company-btn {
     background-color: white;
     border-radius: .5rem;
     border: 1px solid black;
@@ -26,7 +27,7 @@
     width: 3rem;
 }
 
-.follow-company-btn{
+.follow-company-btn {
     height: 3rem;
     width: max-content;
     background-color: var(--cyan) !important;
@@ -34,17 +35,62 @@
     transition: all 250ms ease-in-out;
 }
 
-.follow-company-btn:hover{
+.follow-company-btn:hover {
     background-color: var(--blue-gray) !important;
 }
 
-.company-about,
-.company-job-offers,
-.company-images,
-.company-benefits,
-.company-other-companies,
-.company-location{
+.company-job-offer,
+.benefits-block,
+.other-companies-block,
+.location-block {
     box-shadow: 0 0 25px #00000049;
     border-radius: 1rem;
     background-color: white;
+}
+
+.company-job-offer img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.company-job-offer i {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+.company-job-offer-keywords div span {
+    background-color: #f8f8f8;
+}
+
+.other-companies-block img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.images-block img {
+    border-radius: 1rem;
+}
+
+.benefit-icon {
+    background-color: #DBEDF3;
+    border-radius: 1rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.benefit-icon i {
+    color: var(--cyan);
+    font-size: 1.5rem;
+}
+
+.more-benefit-icon {
+    background-color: #f8f8f8;
+    border-radius: 1rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.more-benefit-icon i {
+    color: grey;
+    font-size: 1.5rem;
 }
