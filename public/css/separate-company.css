@@ -71,6 +71,13 @@
     border-radius: 1rem;
 }
 
+.overlay-image {
+    background-color: black;
+    opacity: .5;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
 .benefit-icon {
     background-color: #DBEDF3;
     border-radius: 1rem;
