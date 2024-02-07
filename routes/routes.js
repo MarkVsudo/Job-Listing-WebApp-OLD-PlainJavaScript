@@ -101,13 +101,13 @@ router.get("/company-overview", (req, res) => {
 });
 
 router.get("/company", authenticateToken, (req, res) => {
-    // Perform a database query to retrieve company data
+  // Perform a database query to retrieve company data
   dbConnection.query("SELECT * FROM companies", (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Internal Server Error");
     }
-    
+
     res.render("company", {
       title: "JobConqueror - Company",
       user: req.user,
@@ -211,7 +211,7 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_email,
       contact_phone,
       linkedIn_url,
-      num_employees
+      num_employees,
     } = req.body;
 
     // Call the handleCompanyVerification method
@@ -230,7 +230,7 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_email,
       contact_phone,
       linkedIn_url,
-      num_employees
+      num_employees,
     });
 
     res.redirect("/dashboard");

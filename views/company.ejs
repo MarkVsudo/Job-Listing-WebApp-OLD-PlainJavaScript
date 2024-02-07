@@ -213,10 +213,12 @@
     </nav>
     <!--  -->
 
+    <% companies.forEach((company) => { %>
+
     <section id="separate-company container py-5">
       <div class="company-head container-fluid p-0">
         <img
-          src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="<%= company.banner %>"
           alt="Company Image"
           class="fluid-image object-fit-cover w-100"
         />
@@ -227,12 +229,12 @@
           <div class="d-flex justify-content-between">
             <div class="d-flex gap-3">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                src="<%= company.logo %>"
                 alt="Company Logo"
                 class="head-company-logo"
               />
               <div class="d-flex flex-column gap-2">
-                <span class="fw-bold fs-4">Pinterest</span
+                <span class="fw-bold fs-4"><%= company.name %></span
                 ><span class="fs-5"
                   >Discover, save and share creative ideas online.</span
                 >
@@ -252,10 +254,10 @@
               <span>Website</span>
               <span class="fw-bolder"
                 ><a
-                  href="https://pinterest.com"
+                  href="<%= company.website %>"
                   target="_blank"
                   class="text-primary"
-                  >pinterest.com</a
+                  ><%= (company.website).split('www.').pop() %></a
                 ></span
               >
             </div>
@@ -265,20 +267,23 @@
             </div>
             <div class="d-flex flex-column gap-1">
               <span>Company Size</span>
-              <span class="fw-bolder">10-50 Employees</span>
+              <span class="fw-bolder"
+                ><%= company.num_employees %> Employees</span
+              >
             </div>
             <div class="d-flex flex-column gap-1">
               <span>Company Industry</span>
-              <span class="fw-bolder">IT (Information Technology)</span>
+              <span class="fw-bolder"><%= company.industry %></span>
             </div>
           </div>
         </div>
       </div>
 
-      <main class="container d-flex justify-content-between">
+      <main class="container d-flex justify-content-between mb-5">
         <div class="main-left-col col-6">
+          <!-- Company Description -->
           <div class="company-about d-flex flex-column gap-3">
-            <span class="h4">About Pinterest</span>
+            <span class="h4">About <%= company.name %></span>
             <div>
               <p style="text-align: justify">
                 At JobConqueror, we're dedicated to transforming career
@@ -289,28 +294,60 @@
                 individuals with the tools they need to conquer their dream
                 roles. Join JobConqueror to explore exceptional opportunities
                 and embark on a journey towards professional success...
-                <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#companyAboutModal">Read more</a>
+                <a
+                  href="#"
+                  class="text-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#companyAboutModal"
+                  >Read more</a
+                >
               </p>
             </div>
 
-<!-- Modal -->
-<div class="modal fade" id="companyAboutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="companyAboutModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="companyAboutModalLabel">About Pinterest</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum consectetur cupiditate, facilis inventore voluptas nesciunt sequi libero delectus alias nisi laboriosam consequuntur ab possimus quaerat amet recusandae. Pariatur, dicta nemo!
-        Nobis aut ex illo inventore dolore earum suscipit, nam eum dolores, quisquam sed ab deleniti odio nemo pariatur fuga quas dolor, harum quasi soluta. Porro a sed nisi debitis earum!
-        Perspiciatis aliquid vitae corporis sed inventore, eos minima modi eius ducimus consectetur blanditiis doloremque consequatur autem dicta cum doloribus, impedit eligendi aspernatur numquam, incidunt ut magnam? Eos ullam earum facere.
-      </div>
-
-    </div>
-  </div>
-</div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="companyAboutModal"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="companyAboutModalLabel"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="companyAboutModalLabel">
+                      About Pinterest
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Rerum consectetur cupiditate, facilis inventore voluptas
+                    nesciunt sequi libero delectus alias nisi laboriosam
+                    consequuntur ab possimus quaerat amet recusandae. Pariatur,
+                    dicta nemo! Nobis aut ex illo inventore dolore earum
+                    suscipit, nam eum dolores, quisquam sed ab deleniti odio
+                    nemo pariatur fuga quas dolor, harum quasi soluta. Porro a
+                    sed nisi debitis earum! Perspiciatis aliquid vitae corporis
+                    sed inventore, eos minima modi eius ducimus consectetur
+                    blanditiis doloremque consequatur autem dicta cum doloribus,
+                    impedit eligendi aspernatur numquam, incidunt ut magnam? Eos
+                    ullam earum facere.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Company Job Offers -->
           <div class="company-job-offers d-flex flex-column gap-3 my-4">
             <div class="d-flex justify-content-between">
               <span class="h4">Jobs From Pinterest</span>
@@ -321,7 +358,7 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-flex gap-2">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                      src="<%= company.logo %>"
                       alt="Job offer company logo"
                     />
                     <div class="d-flex flex-column justify-content-between">
@@ -348,7 +385,7 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-flex gap-2">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                      src="<%= company.logo %>"
                       alt="Job offer company logo"
                     />
                     <div class="d-flex flex-column justify-content-between">
@@ -371,23 +408,17 @@
               </div>
             </div>
           </div>
+          <!-- Company Images -->
           <div class="company-images">
-            <span class="h4">Life at Pinterest</span>
+            <span class="h4">Life at <%= company.name %></span>
             <div class="images-block row g-2 my-4">
               <div class="col-md-8">
-                <img
-                  src="https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                  class="w-100"
-                />
+                <% let companyImages = company.company_images.split(',') %>
+                <img src="<%= companyImages[0] %>" alt="" class="w-100" />
               </div>
               <div class="col-md-4 d-flex flex-column gap-2">
                 <div>
-                  <img
-                    src="https://images.pexels.com/photos/2467506/pexels-photo-2467506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                    class="w-100"
-                  />
+                  <img src="<%= companyImages[1] %>" alt="" class="w-100" />
                 </div>
                 <div class="position-relative">
                   <div
@@ -397,17 +428,11 @@
                   >
                     <span class="text-white opacity-100">See more</span>
                   </div>
-                  <img
-                    src="https://images.pexels.com/photos/3184428/pexels-photo-3184428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt=""
-                    class="w-100"
-                  />
+                  <img src="<%= companyImages[2] %>" alt="" class="w-100" />
                 </div>
               </div>
             </div>
             <!-- Images carousel -->
-
-            <!-- Modal -->
             <div
               class="modal fade"
               id="imagesCarousel"
@@ -417,17 +442,6 @@
             >
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                  <!-- <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="imagesCarouselLabel">
-                      Modal title
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div> -->
                   <div class="modal-body p-0">
                     <div
                       id="carouselExampleAutoplaying"
@@ -435,27 +449,17 @@
                       data-bs-ride="carousel"
                     >
                       <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <% for(let i = 0; i < companyImages.length; i++) { %>
+                        <div
+                          class="carousel-item <%= i === 0 ? 'active' : '' %>"
+                        >
                           <img
-                            src="https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="<%= companyImages[i] %>"
                             class="d-block w-100"
                             alt="Carousel images"
                           />
                         </div>
-                        <div class="carousel-item">
-                          <img
-                            src="https://images.pexels.com/photos/2467506/pexels-photo-2467506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            class="d-block w-100"
-                            alt="Carousel images"
-                          />
-                        </div>
-                        <div class="carousel-item">
-                          <img
-                            src="https://images.pexels.com/photos/3184428/pexels-photo-3184428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            class="d-block w-100"
-                            alt="Carousel images"
-                          />
-                        </div>
+                        <% } %>
                       </div>
                       <button
                         class="carousel-control-prev"
@@ -487,6 +491,7 @@
               </div>
             </div>
           </div>
+          <!-- Company Perks and Benefits -->
           <div class="company-benefits">
             <span class="h4">Perks and Benefits</span>
             <div
@@ -593,6 +598,7 @@
           </div>
         </div>
         <div class="main-right-col col-4">
+          <!-- Other Companies -->
           <div class="company-other-companies">
             <span class="h4">People Also View</span>
             <div
@@ -605,61 +611,68 @@
                 </div>
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
               <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
+                  <span class="fw-bold">Meta</span>
                   <span>Sofia, Bulgaria</span>
                 </div>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="https://www.svgrepo.com/show/424916/meta-logo-facebook.svg"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
               <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
+                  <span class="fw-bold">Microsoft</span>
                   <span>Sofia, Bulgaria</span>
                 </div>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
               <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
+                  <span class="fw-bold">Skype</span>
                   <span>Sofia, Bulgaria</span>
                 </div>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="https://www.freepnglogos.com/uploads/skype-logo-png/skype-logo-vector-icon-template-clipart-download-0.png"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
               <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
+                  <span class="fw-bold">Dribbble</span>
                   <span>Sofia, Bulgaria</span>
                 </div>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
               <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
+                  <span class="fw-bold">Robinhood</span>
                   <span>Sofia, Bulgaria</span>
                 </div>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="https://seeklogo.com/images/R/robinhood-icon-logo-ACF2820914-seeklogo.com.png"
+                  class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
             </div>
           </div>
+          <!-- Company Location -->
           <div class="company-location overflow-hidden">
             <span class="h4">Location</span>
             <div class="location-block d-flex flex-column gap-3 p-3 my-4">
@@ -669,7 +682,7 @@
                   href="https://maps.app.goo.gl/3LSSdLvQpymJsq7x8"
                   target="_blank"
                   class="text-black"
-                  >Ndk, Vitosha Blvd, 1463 Sofia</a
+                  ><%= company.headquarters %></a
                 >
               </div>
               <iframe
@@ -683,8 +696,8 @@
               ></iframe>
               <div class="d-flex gap-2">
                 <i class="bi bi-telephone"></i>
-                <a href="tel:+3598258891526" class="text-black"
-                  >+359 825 889 1526</a
+                <a href="tel:<%= company.contact_phone %>" class="text-black"
+                  ><%= company.contact_phone %></a
                 >
               </div>
             </div>
@@ -692,6 +705,8 @@
         </div>
       </main>
     </section>
+
+    <% }) %>
 
     <!-- Back to top -->
     <a
