@@ -62,6 +62,18 @@
     background-color: #f8f8f8;
 }
 
+.other-companies-block{
+    cursor: pointer;
+}
+
+.other-companies-block > div div{
+    transition: all 250ms ease-in-out;
+}
+
+.other-companies-block > div:hover div{
+    transform: translateX(1rem);
+}
+
 .other-companies-block img {
     width: 3rem;
     height: 3rem;

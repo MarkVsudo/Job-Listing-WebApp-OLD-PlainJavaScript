@@ -59,4 +59,6 @@ taskkill /F /PID (PID FROM PREVIOUS COMMAND)
 
 **📝 Tasks:**
 
+* [ChatGPT integration with TinyMCE](https://www.tiny.cloud/blog/chatgpt-integration/ "DB click")
+
 ---
