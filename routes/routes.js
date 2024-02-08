@@ -84,14 +84,12 @@ router.get("/about-us", (req, res) => {
 });
 
 router.get("/company-overview", (req, res) => {
-  // Perform a database query to retrieve company data
   dbConnection.query("SELECT * FROM companies", (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Internal Server Error");
     }
 
-    // Pass the retrieved data to the rendering function
     res.render("company-overview", {
       title: "JobConqueror - Company Overview",
       user: req.user,
@@ -100,8 +98,10 @@ router.get("/company-overview", (req, res) => {
   });
 });
 
-router.get("/company", authenticateToken, (req, res) => {
-  // Perform a database query to retrieve company data
+router.get("/company/:companyName", authenticateToken, (req, res) => {
+  const companyName = req.params.companyName;
+  const currentUrl = req.originalUrl;
+
   dbConnection.query("SELECT * FROM companies", (err, results) => {
     if (err) {
       console.error(err);
@@ -109,7 +109,9 @@ router.get("/company", authenticateToken, (req, res) => {
     }
 
     res.render("company", {
-      title: "JobConqueror - Company",
+      title: `${companyName} | Company Overview`,
+      companyName: companyName,
+      currentUrl: currentUrl,
       user: req.user,
       companies: results,
     });
@@ -233,7 +235,11 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       num_employees,
     });
 
-    res.redirect("/dashboard");
+    const companyName = req.body.name;
+    const companyUrl = companyName.toLowerCase().replace(/\s+/g, "-");
+
+    // res.redirect("/dashboard");
+    res.redirect(`/company/${companyUrl}`);
   } catch (error) {
     console.error("Error in /verify-employer POST route:", error);
     res.status(500).send("Internal Server Error");

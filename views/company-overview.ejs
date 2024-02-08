@@ -276,9 +276,9 @@
           <span class="h3">Best companies on our platform</span>
         </div>
         <div class="container companies-block d-flex flex-column gap-4">
-          <% companies.forEach((company) => { %>
-          <div class="d-flex gap-4">
-            <div class="company-separate p-0 w-100">
+          <div class="d-flex gap-4 justify-content-center align-items-center">
+            <% companies.forEach((company) => { %>
+            <div class="company-separate p-0 col-md-4">
               <div class="position-relative">
                 <img
                   src="<%= company.banner %>"
@@ -299,145 +299,15 @@
                   </div>
                 </div>
                 <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
+                <a
+                  href="/company/<%=(company.name).toLowerCase().replace(/\s+/g, "-")%>"
+                  class="h4 separate-offer-link"
                   ><%= company.count_offers %> offers</a
                 >
               </div>
             </div>
-            <div class="company-separate p-0 w-100">
-              <div class="position-relative">
-                <img
-                  src="<%= company.banner %>"
-                  alt=""
-                  class="banner-sub"
-                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
-              </div>
-              <div
-                class="d-flex flex-column justify-content-center align-items-start p-2"
-              >
-                <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5"><%= company.name %></span>
-                  <div
-                    class="d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <i class="bi bi-person"></i>
-                    <span class=""><%= company.num_employees %> employees</span>
-                  </div>
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
-                  ><%= company.count_offers %> offers</a
-                >
-              </div>
-            </div>
-            <div class="company-separate p-0 w-100">
-              <div class="position-relative">
-                <img
-                  src="<%= company.banner %>"
-                  alt=""
-                  class="banner-sub"
-                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
-              </div>
-              <div
-                class="d-flex flex-column justify-content-center align-items-start p-2"
-              >
-                <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5"><%= company.name %></span>
-                  <div
-                    class="d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <i class="bi bi-person"></i>
-                    <span class=""><%= company.num_employees %> employees</span>
-                  </div>
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
-                  ><%= company.count_offers %> offers</a
-                >
-              </div>
-            </div>
+            <% }); %>
           </div>
-          <div class="d-flex gap-4">
-            <div class="company-separate p-0 w-100">
-              <div class="position-relative">
-                <img
-                  src="<%= company.banner %>"
-                  alt=""
-                  class="banner-sub"
-                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
-              </div>
-              <div
-                class="d-flex flex-column justify-content-center align-items-start p-2"
-              >
-                <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5"><%= company.name %></span>
-                  <div
-                    class="d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <i class="bi bi-person"></i>
-                    <span class=""><%= company.num_employees %> employees</span>
-                  </div>
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
-                  ><%= company.count_offers %> offers</a
-                >
-              </div>
-            </div>
-            <div class="company-separate p-0 w-100">
-              <div class="position-relative">
-                <img
-                  src="<%= company.banner %>"
-                  alt=""
-                  class="banner-sub"
-                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
-              </div>
-              <div
-                class="d-flex flex-column justify-content-center align-items-start p-2"
-              >
-                <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5"><%= company.name %></span>
-                  <div
-                    class="d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <i class="bi bi-person"></i>
-                    <span class=""><%= company.num_employees %> employees</span>
-                  </div>
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
-                  ><%= company.count_offers %> offers</a
-                >
-              </div>
-            </div>
-            <div class="company-separate p-0 w-100">
-              <div class="position-relative">
-                <img
-                  src="<%= company.banner %>"
-                  alt=""
-                  class="banner-sub"
-                /><img src="<%= company.logo %>" alt="" class="logo-sub" />
-              </div>
-              <div
-                class="d-flex flex-column justify-content-center align-items-start p-2"
-              >
-                <div class="d-flex flex-column gap-2 align-items-start">
-                  <span class="h5"><%= company.name %></span>
-                  <div
-                    class="d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <i class="bi bi-person"></i>
-                    <span class=""><%= company.num_employees %> employees</span>
-                  </div>
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="h4 separate-offer-link"
-                  ><%= company.count_offers %> offers</a
-                >
-              </div>
-            </div>
-          </div>
-          <% }); %>
         </div>
       </div>
     </section>
