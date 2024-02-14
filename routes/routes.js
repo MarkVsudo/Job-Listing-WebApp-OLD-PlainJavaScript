@@ -102,20 +102,66 @@ router.get("/company/:companyName", authenticateToken, (req, res) => {
   const companyName = req.params.companyName;
   const currentUrl = req.originalUrl;
 
-  dbConnection.query("SELECT * FROM companies", (err, results) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send("Internal Server Error");
+  const getIconForPerk = (perk) => {
+    switch (perk.toLowerCase()) {
+      case "healthcare benefits":
+        return "bi bi-shield-plus";
+      case "wellness benefits":
+        return "bi bi-lungs";
+      case "sick leave":
+        return "bi bi-heart-pulse";
+      case "birthday salary":
+        return "bi bi-gift";
+      case "careers growth":
+        return "bi bi-graph-up-arrow";
+      default:
+        return "bi bi-star";
     }
+  };
 
-    res.render("company", {
-      title: `${companyName} | Company Overview`,
-      companyName: companyName,
-      currentUrl: currentUrl,
-      user: req.user,
-      companies: results,
-    });
-  });
+  const tooltipPerks = (arr) => {
+    if (arr.length > 5) {
+      let tooltip = "";
+      for (let i = 5; i < arr.length; i++) {
+        tooltip += `<span>${arr[i]}</span><br>`;
+      }
+      return tooltip;
+    } else {
+      return "";
+    }
+  };
+
+  dbConnection.query(
+    "SELECT * FROM companies WHERE name = ?",
+    [companyName],
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("Internal Server Error");
+      }
+
+      if (results.length === 0) {
+        //company with the given name is not found
+        return res.status(404).send("Company not found");
+      }
+
+      const company = results[0];
+      const companyPerks = company.company_perks
+        .split(",")
+        .map((perk) => perk.trim());
+
+      res.render("company", {
+        title: `${companyName} | Company Overview`,
+        companyName: companyName,
+        currentUrl: currentUrl,
+        user: req.user,
+        companyPerks: companyPerks,
+        companies: results,
+        getIconForPerk: getIconForPerk,
+        tooltipPerks: tooltipPerks,
+      });
+    }
+  );
 });
 
 router.get("/customer-support", (req, res) => {

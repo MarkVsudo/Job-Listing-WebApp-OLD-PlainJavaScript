@@ -62,15 +62,15 @@
     background-color: #f8f8f8;
 }
 
-.other-companies-block{
+.other-companies-block {
     cursor: pointer;
 }
 
-.other-companies-block > div div{
+.other-companies-block>div div {
     transition: all 250ms ease-in-out;
 }
 
-.other-companies-block > div:hover div{
+.other-companies-block>div:hover div {
     transform: translateX(1rem);
 }
 
@@ -88,6 +88,11 @@
     opacity: .5;
     border-radius: 1rem;
     cursor: pointer;
+}
+
+.benefits-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .benefit-icon {
