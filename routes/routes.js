@@ -260,6 +260,8 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_phone,
       linkedIn_url,
       num_employees,
+      maps_url,
+      maps_iframe_url,
     } = req.body;
 
     // Call the handleCompanyVerification method
@@ -279,6 +281,8 @@ router.post("/verify-employer", authenticateToken, async (req, res) => {
       contact_phone,
       linkedIn_url,
       num_employees,
+      maps_url,
+      maps_iframe_url,
     });
 
     const companyName = req.body.name;

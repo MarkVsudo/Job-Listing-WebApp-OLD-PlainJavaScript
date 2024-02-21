@@ -276,9 +276,9 @@
           <span class="h3">Best companies on our platform</span>
         </div>
         <div class="container companies-block d-flex flex-column gap-4">
-          <div class="d-flex gap-4 justify-content-center align-items-center">
+          <div class="d-grid gap-4 justify-content-center align-items-center" style="grid-template-columns: repeat(3, 1fr);">
             <% companies.forEach((company) => { %>
-            <div class="company-separate p-0 col-md-4">
+            <div class="company-separate p-0 col-md-4 w-100">
               <div class="position-relative">
                 <img
                   src="<%= company.banner %>"
