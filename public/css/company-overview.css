@@ -118,7 +118,7 @@
 
 .logo-sub {
   background-color: white;
-  object-fit: cover;
+  object-fit: contain;
   width: 35%;
   height: 6rem;
   border-radius: 1rem;
