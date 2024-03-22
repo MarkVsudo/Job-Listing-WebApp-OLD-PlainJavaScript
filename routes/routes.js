@@ -141,7 +141,6 @@ router.get("/company/:companyName", authenticateToken, (req, res) => {
       }
 
       if (results.length === 0) {
-        //company with the given name is not found
         return res.status(404).send("Company not found");
       }
 
@@ -150,16 +149,33 @@ router.get("/company/:companyName", authenticateToken, (req, res) => {
         .split(",")
         .map((perk) => perk.trim());
 
-      res.render("company", {
-        title: `${companyName} | Company Overview`,
-        companyName: companyName,
-        currentUrl: currentUrl,
-        user: req.user,
-        companyPerks: companyPerks,
-        companies: results,
-        getIconForPerk: getIconForPerk,
-        tooltipPerks: tooltipPerks,
-      });
+      dbConnection.query(
+        "SELECT * FROM companies",
+        (err, allCompaniesResults) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).send("Internal Server Error");
+          }
+
+          if (allCompaniesResults.length === 0) {
+            return res.status(404).send("No companies found");
+          }
+
+          const allCompanies = allCompaniesResults;
+
+          res.render("company", {
+            title: `${companyName} | Company Overview`,
+            companyName: companyName,
+            currentUrl: currentUrl,
+            user: req.user,
+            companyPerks: companyPerks,
+            companies: results,
+            allCompanies: allCompanies,
+            getIconForPerk: getIconForPerk,
+            tooltipPerks: tooltipPerks,
+          });
+        }
+      );
     }
   );
 });

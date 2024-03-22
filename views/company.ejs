@@ -582,72 +582,26 @@
             <div
               class="other-companies-block d-flex flex-column gap-4 p-3 my-4"
             >
+              <% for(let i = Math.max(allCompanies.length - 6, 0); i <
+              allCompanies.length; i++) { %>
               <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Pinterest</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
+                <a
+                  href="/company/<%= allCompanies[i].name.toLowerCase() %>"
+                  target="_blank"
+                  class="text-black"
+                >
+                  <div class="d-flex flex-column">
+                    <span class="fw-bold"><%= allCompanies[i].name %></span>
+                    <span><%= allCompanies[i].headquarters %></span>
+                  </div>
+                </a>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                  src="<%= allCompanies[i].logo %>"
                   class="object-fit-contain"
                   alt="Other company logo"
                 />
               </div>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Meta</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
-                <img
-                  src="https://www.svgrepo.com/show/424916/meta-logo-facebook.svg"
-                  class="object-fit-contain"
-                  alt="Other company logo"
-                />
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Microsoft</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"
-                  class="object-fit-contain"
-                  alt="Other company logo"
-                />
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Skype</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
-                <img
-                  src="https://www.freepnglogos.com/uploads/skype-logo-png/skype-logo-vector-icon-template-clipart-download-0.png"
-                  class="object-fit-contain"
-                  alt="Other company logo"
-                />
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Dribbble</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
-                <img
-                  src="https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png"
-                  class="object-fit-contain"
-                  alt="Other company logo"
-                />
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-column">
-                  <span class="fw-bold">Robinhood</span>
-                  <span>Sofia, Bulgaria</span>
-                </div>
-                <img
-                  src="https://seeklogo.com/images/R/robinhood-icon-logo-ACF2820914-seeklogo.com.png"
-                  class="object-fit-contain"
-                  alt="Other company logo"
-                />
-              </div>
+              <% } %>
             </div>
           </div>
           <!-- Company Location -->
