@@ -43,16 +43,21 @@ router.get("/recommendations", authenticateToken, (req, res) => {
   });
 });
 
+// GET Contact Us Page
 router.get("/contact-us", authenticateToken, (req, res) => {
   res.render("contact-us", {
-    title: "JobConqueror - Contact us",
+    title: "JobConqueror - Contact Us",
     user: req.user,
   });
 });
 
-// Contact Us Form Submission
-router.post("/contact-us-form", authenticateToken, (req, res) => {
+// POST Contact Us Form Submission
+router.post("/contact-us", authenticateToken, (req, res) => {
   const { contactLastName, contactEmail, contactMessage } = req.body;
+
+  if (!contactLastName || !contactEmail || !contactMessage) {
+    return res.status(400).json("All fields are required.");
+  }
 
   const mailOptions = {
     from: contactEmail,
@@ -63,12 +68,12 @@ router.post("/contact-us-form", authenticateToken, (req, res) => {
 
   nodemailerConfig.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.error(error);
+      console.error("Error sending email:", error);
+      return res.status(500).json("Failed to send email.");
     }
     console.log("Email sent:", info.response);
+    return res.status(200).json("Email sent successfully!");
   });
-
-  res.send("Email sent successfully!");
 });
 
 router.get("/login", (req, res) => {
